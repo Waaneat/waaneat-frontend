@@ -29,6 +29,8 @@ import { IndexCustomerComponent } from './customer/index-customer/index-customer
 import { SearchDishesComponent } from './customer/search-dishes/search-dishes.component';
 import { SearchRestoComponent } from './customer/search-resto/search-resto.component';
 import { RestaurantsComponent } from './customer/search-resto/restaurants/restaurants.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { RestaurantsComponent } from './customer/search-resto/restaurants/restau
     IndexCustomerComponent,
     SearchDishesComponent,
     SearchRestoComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    DishFromRestoComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { RestaurantsComponent } from './customer/search-resto/restaurants/restau
     MatStepperModule,
     MatInputModule,
     FontAwesomeModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatPaginatorModule
   ],
   providers: [
     provideClientHydration()

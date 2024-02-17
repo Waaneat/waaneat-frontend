@@ -6,7 +6,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    // position: fixed;
+    position: fixed;
     width: 100%;
     background-color: white;
     z-index: 5;
@@ -41,6 +41,9 @@ header{
             margin-right: 7px;
         }
     }
+}
+.sub-header{
+    height: 70px;
 }
 .main-container{
     // border: solid;

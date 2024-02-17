@@ -8,11 +8,13 @@ import { IndexCustomerComponent } from './customer/index-customer/index-customer
 import { SearchDishesComponent } from './customer/search-dishes/search-dishes.component';
 import { SearchRestoComponent } from './customer/search-resto/search-resto.component';
 import { RestaurantsComponent } from './customer/search-resto/restaurants/restaurants.component';
+import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
 
 const routes: Routes = [
   // { path: '',component: },
   { path: '',component:IndexCustomerComponent },
   { path: 'restaurant',component:RestaurantsComponent },
+  { path: 'platfromresto',component:DishFromRestoComponent },
   { path: 'plats',component:SearchDishesComponent },
   { path: 'restaurants',component:SearchRestoComponent },
   { path: 'connexion',component:LoginComponent },
