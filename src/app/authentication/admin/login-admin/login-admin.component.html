@@ -1,0 +1,29 @@
+<div class="contain-form">
+    <div class="waaneat">
+        <img class="waaneat-logo" src="../../../../assets/images/waaneat-logo.png" alt="">
+    </div>
+    <form [formGroup]="contactForm" class="main-form">
+        <div>
+            <input type="text" placeholder="Username ou email" formControlName="senderIdentifier">
+            <div *ngIf="contactForm.get('senderIdentifier')?.invalid && (contactForm.get('senderIdentifier')?.dirty || contactForm.get('senderIdentifier')?.touched)">
+                <small class="text-danger" *ngIf="contactForm.get('senderIdentifier')?.hasError('required')">
+                    This field is required
+                </small>
+            </div>
+        </div>
+        <div>
+            <input type="password" placeholder="Mot de passe" formControlName="senderPassword">
+            <div *ngIf="contactForm.get('senderPassword')?.invalid && (contactForm.get('senderPassword')?.dirty || contactForm.get('senderPassword')?.touched)">
+                <small class="text-danger" *ngIf="contactForm.get('senderPassword')?.hasError('required')">
+                    This field is required
+                </small>
+            </div>
+        </div>
+        <div><button [disabled]="contactForm.invalid" type="submit" class="btn login-btn" (click)="login()">Connexion</button></div>
+        
+    </form>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#951515" fill-opacity="1" d="M0,64L60,106.7C120,149,240,235,360,261.3C480,288,600,256,720,224C840,192,960,160,1080,144C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+</svg>

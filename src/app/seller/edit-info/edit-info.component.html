@@ -1,0 +1,78 @@
+<div class="contain-form">
+    <form [formGroup]="contactForm">
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Modifier mes infos</ng-template>
+                <main>
+                    <div>
+                        <input type="text" placeholder="Username" formControlName="senderUsername">
+                        <div *ngIf="contactForm.get('senderUsername')?.invalid && (contactForm.get('senderUsername')?.dirty || contactForm.get('senderUsername')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderUsername')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="nom du restaurant" formControlName="senderRestoName">
+                        <div *ngIf="contactForm.get('senderRestoName')?.invalid && (contactForm.get('senderRestoName')?.dirty || contactForm.get('senderRestoName')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderRestoName')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="email" placeholder="email" formControlName="senderEmail">
+                        <div *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty || contactForm.get('senderEmail')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderEmail')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="tel" placeholder="telephone" formControlName="senderTel">
+                        <div *ngIf="contactForm.get('senderTel')?.invalid && (contactForm.get('senderTel')?.dirty || contactForm.get('senderTel')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderTel')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="hours-container">
+                        <div class="hourEnd-container">
+                            <label for="#">Heure de d'ouverture</label>
+                            <input type="time" placeholder="Mot de passe" formControlName="senderHourStart">
+                            <div *ngIf="contactForm.get('senderHourStart')?.invalid && (contactForm.get('senderHourStart')?.dirty || contactForm.get('senderHourStart')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderHourStart')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                        <div class="hourEnd-container">
+                            <label for="#">Heure de fermeture</label>
+                            <input type="time" placeholder="Mot de passe" formControlName="senderHourEnd">
+                            <div *ngIf="contactForm.get('senderHourEnd')?.invalid && (contactForm.get('senderHourEnd')?.dirty || contactForm.get('senderHourEnd')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderHourEnd')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+                <!-- <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div> -->
+            </mat-step>
+        </mat-stepper>
+        <header>
+            <button mat-icon-button matDialogClose> <mat-icon>close</mat-icon></button>
+        </header>
+        
+        <footer>
+            <button [disabled]="contactForm.invalid" (click)="register()" type="submit">Modifier</button>
+        </footer>
+    </form>
+</div>

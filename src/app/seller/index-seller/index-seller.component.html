@@ -1,0 +1,205 @@
+<main>
+    <div class="left">
+        <div class="top-left">
+            <img src="../../../assets/images/waaneat-logo.png" alt="">
+        </div>
+        <div class="bottom-left">
+            <div  [ngClass]="{'active': activeTab === 'dashboard'}" (click)="setActiveTab('dashboard')">
+                <span><fa-icon [icon]="faHome"></fa-icon></span>
+                <span>Dashboard</span>
+            </div>
+              
+            <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+                <span><fa-icon [icon]="faGear"></fa-icon></span>
+                <span>Parametres</span>
+            </div>
+              
+            <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
+                <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
+                <span>Deconnexion</span>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="menu-container" [class.menu-enabled]="isMenuActivated">
+            <main class="menu">
+                <div class="top-menu"><fa-icon (click)="toggleMenuActivation()" [icon]="faClose"></fa-icon></div>
+                <div class="middle-menu">
+                    <img src="../../../assets/images/logo_menu.png" alt="">
+                </div>
+                <div class="bottom-menu">
+                    <div  [ngClass]="{'active': activeTab === 'dashboard'}" (click)="setActiveTab('dashboard')">
+                        <span><fa-icon [icon]="faHome"></fa-icon></span>
+                        <span>Dashboard</span>
+                    </div>
+                      
+                    <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+                        <span><fa-icon [icon]="faGear"></fa-icon></span>
+                        <span>Parametres</span>
+                    </div>
+                      
+                    <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
+                        <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
+                        <span>Deconnexion</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="banner">
+            <img src="../../../assets/images/restaurant2-banner.jpg" alt="">
+            <div class="div-banner">
+                <h2>Chez Lamine saff roff</h2>
+                <mat-dialog-actions>
+                <div mat-raised-button (click)="$event.preventDefault();openDialogEditBackground()">
+                    
+                    <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                    <span><fa-icon [icon]="faEdit"></fa-icon></span>
+                    
+                </div>
+                </mat-dialog-actions>
+            </div>
+            <span (click)="toggleMenuActivation()" ><fa-icon [icon]="faBars"></fa-icon></span>
+        </div>
+        <div class="main-container">
+            <main class="dash-container">
+                <div class="top-dc sub-container">
+                    <span>Dashboard</span>
+                    <label class="switch-btn">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="middle-dc sub-container">
+                    <div class="left-mdc">
+                        <header class="header1">
+                            <span style="font-size: 25px;" class="title">Plats</span>
+                            <span>
+                                <mat-dialog-actions>
+                                    <button mat-raised-button (click)="$event.preventDefault();openDialogAddDish()"><fa-icon [icon]="faAdd"></fa-icon>Ajouter</button>
+                                </mat-dialog-actions>
+                            </span>
+                        </header>
+                        <div>
+                            <header class="header2">
+                                <div >Plat</div>
+                                <div class="name">Nom</div>
+                                <div>Prix</div>
+                                <div>action</div>
+                            </header>
+                            <main class="dishes-container">
+                                <div class="dish-tr">
+                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
+                                    <div class="dish-name">Thiebou dieune</div>
+                                    <div>1000f</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="dish-tr">
+                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
+                                    <div class="dish-name">Thiebou dieune</div>
+                                    <div>1000f</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="dish-tr">
+                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
+                                    <div class="dish-name">Thiebou dieune</div>
+                                    <div>1000f</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="dish-tr">
+                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
+                                    <div class="dish-name">Thiebou dieune</div>
+                                    <div>1000f</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </main>
+                        </div>
+                        
+                    </div>
+                    <div class="right-mdc">
+                        <div class="info">
+                            <header>
+                                <span>Informations</span>
+                                <span>
+                                    <mat-dialog-actions>
+                                        <fa-icon class="edit-info" mat-raised-button (click)="$event.preventDefault();openDialogEditInfo()" [icon]="faEdit"></fa-icon>
+                                    </mat-dialog-actions>
+                                </span>
+                            </header>
+                            <div>
+                                <span><fa-icon [icon]="faUser"></fa-icon></span>
+                                <span>dabso</span>
+                            </div>
+                            <div>
+                                <span><fa-icon [icon]="faShop"></fa-icon></span>
+                                <span>Chez lamine</span>
+                            </div>
+                            <div>
+                                <span><fa-icon [icon]="faEnvelope"></fa-icon></span>
+                                <span>laminedabogmail.com</span>
+                            </div>
+                            <div>
+                                <span><fa-icon [icon]="faPhone"></fa-icon></span>
+                                <span>773338833</span>
+                            </div>
+                            <div>
+                                <span><fa-icon [icon]="faClock"></fa-icon></span>
+                                <span>10h00 - 18h00</span>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <header>
+                                <span>Description</span>
+                                <span>
+                                    <mat-dialog-actions>
+                                        <fa-icon class="edit-desc" mat-raised-button (click)="$event.preventDefault();openDialogEditDesc()" [icon]="faEdit"></fa-icon>
+                                    </mat-dialog-actions>
+                                </span>
+                            </header>
+                            <div>
+                                <span>Pas de description</span>
+                            </div>
+                            
+                        </div>
+                        <div class="description"></div>
+                    </div>
+                </div>
+                <!-- <div class="bottom-dc sub-container">
+
+                </div> -->
+            </main>
+        </div>
+    </div>
+</main>

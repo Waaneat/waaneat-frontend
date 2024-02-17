@@ -1,0 +1,162 @@
+<div class="contain-form">
+    <form [formGroup]="contactForm">
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Informations personnelles</ng-template>
+                <main>
+                    <div>
+                        <input type="text" placeholder="Username" formControlName="senderUsername">
+                        <div *ngIf="contactForm.get('senderUsername')?.invalid && (contactForm.get('senderUsername')?.dirty || contactForm.get('senderUsername')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderUsername')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div> 
+                        <input type="email" placeholder="email" formControlName="senderEmail">
+                        <div *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty || contactForm.get('senderEmail')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderEmail')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="tel" placeholder="Telephone" formControlName="senderTel">
+                        <div *ngIf="contactForm.get('senderTel')?.invalid && (contactForm.get('senderTel')?.dirty || contactForm.get('senderTel')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderTel')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Mot de passe" formControlName="senderPassword">
+                        <div *ngIf="contactForm.get('senderPassword')?.invalid && (contactForm.get('senderPassword')?.dirty || contactForm.get('senderPassword')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderPassword')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Confirmez le mot de passe" formControlName="senderConfirmPassword">
+                        <div *ngIf="contactForm.get('senderConfirmPassword')?.invalid && (contactForm.get('senderConfirmPassword')?.dirty || contactForm.get('senderConfirmPassword')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderConfirmPassword')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                        <div *ngIf="contactForm.get('senderConfirmPassword')?.value !== contactForm.get('senderPassword')?.value">
+                            <small class="text-danger">
+                                Les mots de passe ne sont pas les mêmes
+                            </small>
+                        </div>
+                    </div>
+                </main>
+                <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Restaurant Informations</ng-template>
+                <main>
+                    <!-- <div class="restoInf"> -->
+                        <div style="background-color: red; color: white; padding: 3px 5px; border-radius: 5px; width: 100%;text-align: center;margin-bottom: 5px;" *ngIf="errors">{{ errors }}</div>
+                        
+                        <div class="adress-container">
+                            <input type="text" placeholder="Adresse" formControlName="senderAdress">
+                            <div *ngIf="contactForm.get('senderAdress')?.invalid && (contactForm.get('senderAdress')?.dirty || contactForm.get('senderAdress')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderAdress')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <div class="enterprise-container">
+                            <input type="text" placeholder="Entreprise" formControlName="senderEntreprise">
+                            <div *ngIf="contactForm.get('senderEntreprise')?.invalid && (contactForm.get('senderEntreprise')?.dirty || contactForm.get('senderEntreprise')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderEntreprise')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                        <div class="CI-container">
+                            <input formControlName="senderIdentityCard" style="display: none;" type="file" class="file-input" accept=".jpg, .jpeg, .png" 
+                                 #fileUpload (change)="uploadFile($event)">
+        
+                            <div class="file-upload">
+                                <button class="upload-btn" [class.filled-border-success]="hasFileValue()"
+                                    (click)="fileUpload.click()">
+                                    Telecharger la Carte d'identité<mat-icon>upload</mat-icon>
+                                </button> 
+                            </div>
+    
+                            <div *ngIf="contactForm.get('senderIdentityCard')?.invalid && (contactForm.get('senderIdentityCard')?.dirty || contactForm.get('senderIdentityCard')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderIdentityCard')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                                <small class="text-danger" *ngIf="contactForm.get('senderIdentityCard')?.hasError('inValidExt')">
+                                    Seuls PNG , JPG , JPEG sont valides
+                                </small>
+                                
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    <div class="category-container">
+                        <select formControlName="senderCategory" class="category" name="" id="">
+                            <option value="" disabled selected>Select the category</option>
+                            <option value="Tangana">Tangana</option>
+                            <option value="Patisserie">Patisserie</option>
+                            <option value="Creperie">Creperie</option>
+                            <option value="Vendeur de riz">Vendeur de riz</option>
+                            <option value="Particulier">Particulier</option>
+                            <option value="Traiteur">Traiteur</option>
+                            <option value="Autres">Autres</option>
+                        </select>
+                        <div *ngIf="contactForm.get('senderCategory')?.invalid && (contactForm.get('senderCategory')?.dirty || contactForm.get('senderCategory')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderCategory')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+                    <div class="hours-container">
+                        <div class="hourEnd-container">
+                            <label for="#">Heure de d'ouverture</label>
+                            <input type="time" placeholder="Mot de passe" formControlName="senderHourStart">
+                            <div *ngIf="contactForm.get('senderHourStart')?.invalid && (contactForm.get('senderHourStart')?.dirty || contactForm.get('senderHourStart')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderHourStart')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                        <div class="hourEnd-container">
+                            <label for="#">Heure de fermeture</label>
+                            <input type="time" placeholder="Mot de passe" formControlName="senderHourEnd">
+                            <div *ngIf="contactForm.get('senderHourEnd')?.invalid && (contactForm.get('senderHourEnd')?.dirty || contactForm.get('senderHourEnd')?.touched)">
+                                <small class="text-danger" *ngIf="contactForm.get('senderHourEnd')?.hasError('required')">
+                                    Veuillez remplir le champs
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <dd class="cgu-container">
+                        <input class="cgu" type="checkbox" formControlName="senderCGU">
+                        <span>Accepter <a href="#">les conditions d'utilisation</a></span>
+                    </dd>
+                </main>
+                <div>
+                    <button mat-button matStepperPrevious>Precedent</button>
+                </div>
+                
+            </mat-step>
+        </mat-stepper>
+        <header>
+            <button mat-icon-button matDialogClose> <mat-icon>close</mat-icon></button>
+        </header>
+        
+        <footer>
+            <button [disabled]="contactForm.invalid" (click)="register()" type="submit">S'inscrire</button>
+        </footer>
+    </form>
+</div>

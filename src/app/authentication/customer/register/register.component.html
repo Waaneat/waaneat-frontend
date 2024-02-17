@@ -1,0 +1,82 @@
+<div class="contain-form">
+    <form [formGroup]="contactForm">
+        <mat-stepper  #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Informations personnelles</ng-template>
+                <main>
+                    <div>
+                        <input type="text" placeholder="Username" formControlName="senderUsername">
+                        <div *ngIf="contactForm.get('senderUsername')?.invalid && (contactForm.get('senderUsername')?.dirty || contactForm.get('senderUsername')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderUsername')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div> 
+                        <input type="email" placeholder="email" formControlName="senderEmail">
+                        <div *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty || contactForm.get('senderEmail')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderEmail')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="tel" placeholder="Telephone" formControlName="senderTel">
+                        <div *ngIf="contactForm.get('senderTel')?.invalid && (contactForm.get('senderTel')?.dirty || contactForm.get('senderTel')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderTel')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Mot de passe" formControlName="senderPassword">
+                        <div *ngIf="contactForm.get('senderPassword')?.invalid && (contactForm.get('senderPassword')?.dirty || contactForm.get('senderPassword')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderPassword')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input type="password" placeholder="Confirmez le mot de passe" formControlName="senderConfirmPassword">
+                        <div *ngIf="contactForm.get('senderConfirmPassword')?.invalid && (contactForm.get('senderConfirmPassword')?.dirty || contactForm.get('senderConfirmPassword')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderConfirmPassword')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                        <div *ngIf="contactForm.get('senderConfirmPassword')?.value !== contactForm.get('senderPassword')?.value">
+                            <small class="text-danger">
+                                Les mots de passe ne sont pas les mêmes
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="adress-container">
+                        <input type="text" placeholder="Adresse" formControlName="senderAdress">
+                        <div *ngIf="contactForm.get('senderAdress')?.invalid && (contactForm.get('senderAdress')?.dirty || contactForm.get('senderAdress')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderAdress')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <dd class="cgu-container">
+                        <input class="cgu" type="checkbox" formControlName="senderCGU">
+                        <span>Accepter <a href="#">les conditions d'utilisation</a></span>
+                    </dd>
+                </main>
+            </mat-step>
+            
+        </mat-stepper>
+        <header>
+            <button mat-icon-button matDialogClose> <mat-icon>close</mat-icon></button>
+        </header>
+        
+        <footer>
+            <button [disabled]="contactForm.invalid" (click)="register()" type="submit">S'inscrire</button>
+        </footer>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="contain-form">
+    <form [formGroup]="contactForm">
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Modifier la description</ng-template>
+                <main>
+                    <div>
+                        <textarea placeholder="description du restaurant" formControlName="senderDishDesc" rows="4" cols=""></textarea>
+                        <div *ngIf="contactForm.get('senderDishName')?.invalid && (contactForm.get('senderDishName')?.dirty || contactForm.get('senderDishName')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishName')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                </main>
+                <!-- <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div> -->
+            </mat-step>
+        </mat-stepper>
+        <header>
+            <button mat-icon-button matDialogClose> <mat-icon>close</mat-icon></button>
+        </header>
+        
+        <footer>
+            <button [disabled]="contactForm.invalid" (click)="register()" type="submit">Modifier</button>
+        </footer>
+    </form>
+</div>
