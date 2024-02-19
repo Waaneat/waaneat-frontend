@@ -9,6 +9,7 @@ import { SearchDishesComponent } from './customer/search-dishes/search-dishes.co
 import { SearchRestoComponent } from './customer/search-resto/search-resto.component';
 import { RestaurantsComponent } from './customer/search-resto/restaurants/restaurants.component';
 import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
+import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
 
 const routes: Routes = [
   // { path: '',component: },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'connexion',component:LoginComponent },
   { path: 'vendeur/connexion',component:LoginSellerComponent },
   { path: 'adminL2D/connexion',component:LoginAdminComponent },
+  { path: 'admin/dashboard',component:IndexAdminComponent },
   { path: 'vendeur/dashboard',component:IndexSellerComponent },
 ];
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot , faStar , faLocationArrow} from '@fortawesome/free-solid-svg-icons'
 
 
 @Component({
@@ -13,4 +13,6 @@ export class SearchRestoComponent {
   faSearch = faSearch
   faFilter = faFilter
   faLocationDot = faLocationDot
+  faStar = faStar
+  faLocationArrow = faLocationArrow
 }

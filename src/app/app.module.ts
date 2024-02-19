@@ -31,6 +31,7 @@ import { SearchRestoComponent } from './customer/search-resto/search-resto.compo
 import { RestaurantsComponent } from './customer/search-resto/restaurants/restaurants.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
+import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish
     SearchDishesComponent,
     SearchRestoComponent,
     RestaurantsComponent,
-    DishFromRestoComponent
+    DishFromRestoComponent,
+    IndexAdminComponent
   ],
   imports: [
     BrowserModule,

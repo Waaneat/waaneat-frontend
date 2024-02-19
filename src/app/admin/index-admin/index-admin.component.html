@@ -1,0 +1,207 @@
+<main>
+    <div class="left">
+        <div class="top-left">
+            <img src="../../../assets/images/waaneat-logo.png" alt="">
+        </div>
+        <div class="bottom-left">
+            <div  [ngClass]="{'active': activeTab === 'vendeurs'}" (click)="setActiveTab('vendeurs')">
+                <span><fa-icon [icon]="faStore"></fa-icon></span>
+                <span>Vendeurs</span>
+            </div>
+
+            <div  [ngClass]="{'active': activeTab === 'clients'}" (click)="setActiveTab('clients')">
+                <span><fa-icon [icon]="faUsers"></fa-icon></span>
+                <span>Clients</span>
+            </div>
+
+            <div  [ngClass]="{'active': activeTab === 'admins'}" (click)="setActiveTab('admins')">
+                <span><fa-icon [icon]="faUserGear"></fa-icon></span>
+                <span>Administrateurs</span>
+            </div>
+              
+            <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+                <span><fa-icon [icon]="faGear"></fa-icon></span>
+                <span>Parametres</span>
+            </div>
+              
+            <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
+                <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
+                <span>Deconnexion</span>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="menu-container" [class.menu-enabled]="isMenuActivated">
+            <main class="menu">
+                <div class="top-menu"><fa-icon (click)="toggleMenuActivation()" [icon]="faClose"></fa-icon></div>
+                <div class="middle-menu">
+                    <img src="../../../assets/images/logo_menu.png" alt="">
+                </div>
+                <div class="bottom-menu">
+                    <div  [ngClass]="{'active': activeTab === 'vendeurs'}" (click)="setActiveTab('vendeurs')">
+                        <span><fa-icon [icon]="faStore"></fa-icon></span>
+                        <span>Vendeurs</span>
+                    </div>
+        
+                    <div  [ngClass]="{'active': activeTab === 'clients'}" (click)="setActiveTab('clients')">
+                        <span><fa-icon [icon]="faUsers"></fa-icon></span>
+                        <span>Clients</span>
+                    </div>
+        
+                    <div  [ngClass]="{'active': activeTab === 'admins'}" (click)="setActiveTab('admins')">
+                        <span><fa-icon [icon]="faUserGear"></fa-icon></span>
+                        <span>Administrateurs</span>
+                    </div>
+                      
+                    <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+                        <span><fa-icon [icon]="faGear"></fa-icon></span>
+                        <span>Parametres</span>
+                    </div>
+                      
+                    <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
+                        <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
+                        <span>Deconnexion</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <div *ngIf="activeTab == 'vendeurs'" class="main-container">
+            <header class="header">
+                <div class="profil">
+                    <div><img src="../../../assets/images/lj.jpeg" alt=""></div>
+                    <div class="profil-detail">
+                        <span>Lamine</span>
+                        <span>super admin</span>
+                    </div>
+                    <div><fa-icon [icon]="faCaretDown"></fa-icon> </div>
+                </div>
+                <label class="switch-btn">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </header>
+            <main class="dash-container">
+                
+                <div class="top-dc sub-container">
+                    <span>Vendeurs</span>
+                    <div class="main-actions">
+                        <form>
+                            <input type="text" placeholder="rechercher un vendeur">
+                            <button><fa-icon [icon]="faSearch"></fa-icon></button>
+                        </form>
+                        <button><fa-icon [icon]="faAdd"></fa-icon>Ajouter</button>
+                    </div>
+                </div>
+                <div class="middle-dc sub-container">
+                    <div class="left-mdc">
+                        <header class="header1">
+                            <span>
+                                <button><fa-icon [icon]="faTrash"></fa-icon>Supprimer</button>
+                            </span>
+                        </header>
+                        <div>
+                            <header class="header2">
+                                <div class="check"><input type="checkbox"></div>
+                                <div >Id</div>
+                                <div class="name">Username</div>
+                                <div>Mail</div>
+                                <div>Telephone</div>
+                                <div>Adresse</div>
+                                <div>Restaurant</div>
+                                <div>CI</div>
+                                <div>Action</div>
+                            </header>
+                            <main class="dishes-container">
+                                <div class="dish-tr">
+                                    <div class="check"><input type="checkbox"></div>
+                                    <div>673ed37373...</div>
+                                    <div>Lamine</div>
+                                    <div>laminegmail.c..</div>
+                                    <div>773334312</div>
+                                    <div>Colobane</div>
+                                    <div>Chez lamine</div>
+                                    <div>ci1.jpg</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="dish-tr">
+                                    <div class="check"><input type="checkbox"></div>
+                                    <div>673ed37373...</div>
+                                    <div>Lamine</div>
+                                    <div>laminegmail.c..</div>
+                                    <div>773334312</div>
+                                    <div>Colobane</div>
+                                    <div>Chez lamine</div>
+                                    <div>ci1.jpg</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="dish-tr">
+                                    <div class="check"><input type="checkbox"></div>
+                                    <div>673ed37373...</div>
+                                    <div>Lamine</div>
+                                    <div>laminegmail.c..</div>
+                                    <div>773334312</div>
+                                    <div>Colobane</div>
+                                    <div>Chez lamine</div>
+                                    <div>ci1.jpg</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="dish-tr">
+                                    <div class="check"><input type="checkbox"></div>
+                                    <div>673ed37373...</div>
+                                    <div>Lamine</div>
+                                    <div>laminegmail.c..</div>
+                                    <div>773334312</div>
+                                    <div>Colobane</div>
+                                    <div>Chez lamine</div>
+                                    <div>ci1.jpg</div>
+                                    <div class="action">
+                                        <mat-dialog-actions>
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        </mat-dialog-actions>
+                                        <label class="switch-btn">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </main>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- <div class="bottom-dc sub-container">
+
+                </div> -->
+            </main>
+        </div>
+    </div>
+</main>

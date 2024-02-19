@@ -150,3 +150,691 @@ header{
         }
     }
 }
+
+@media only screen and (max-width: 300px) {
+    
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    .main-container{
+        // border: solid;
+        padding: 0 35px;
+        
+    
+        .search-container{
+            // margin-top: 100px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+    
+            .search-bar-container{
+                padding: 10px 0;
+                
+                width: 100%;
+                input{
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 100%;
+                    border-style: none;
+                    border: solid grey;
+                    height: 100%;
+                    margin-right: 0px;
+                }
+                button{
+                    display: none;
+                    height: 100%;
+                    border-radius: 5px;
+                    padding: 10px;
+                    border-style: none;
+                    background-color: #951515;
+                    color: white;
+                }
+            }
+    
+            .filtre{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 100%;
+    
+                .range-input{
+                    border-radius: 5px;
+                    margin-left: 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border: solid grey;
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    input{
+                        width: 90px;
+                    }
+                }
+                select{
+                    margin-bottom: 10px;
+                    border: solid grey;
+                    border-radius: 5px;
+                    margin-left: 0;
+                    padding: 10px;
+                    width: 100%;
+
+                }
+                .btn-container{
+                    margin-left: 0px;
+                    width: 100%;
+                    
+    
+                    button{
+                        width: 100%;
+                        border-radius: 5px;
+                        padding: 10px;
+                        border-style: none;
+                        background-color: #951515;
+                        color: white;
+                    }
+                }
+            }
+        }
+    
+        .cards-container{
+            display: grid;
+            grid-template-columns: 100%;
+            margin-top: 20px;
+            
+    
+            .card-container{
+                border: solid;
+                margin-right: 0;
+                border-color: rgb(206, 206, 206);
+                border-radius: 5px;
+                margin-bottom: 20px;
+    
+                .card-banner{
+                    padding: 5px;
+                    position: relative;
+    
+                    .resto-details{
+                        padding: 5px;
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.467);
+                        border-radius: 5px;
+                        margin: 5px;
+    
+                        .resto-title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: 30px;
+    
+                            .icon{
+                                background-color: #951515;
+                                padding: 0 5px;
+                                border-radius: 5px;
+                                fa-icon{
+                                    color: yellow;
+                                }
+                            }
+    
+                            .title{
+                                font-size: 25px;
+                            }
+                        }
+                        .available{
+                            background-color: green;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                          
+                        }
+                        .unavailable{
+                           
+                            background-color: red;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                        }
+    
+                    }
+    
+                    img{
+                        width: 100%;
+                        height: 150px;
+                        border-radius: 5px;
+                        object-fit: cover;
+                    }
+                }
+    
+                .card-footer{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+    
+                    button{
+                        background-color: #951515;
+                        border-style: none;
+                        padding: 10px;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                    span{
+                        font-size: 15px;
+    
+                        fa-icon{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    .main-container{
+        // border: solid;
+        padding: 0 35px;
+        
+    
+        .search-container{
+            // margin-top: 100px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+    
+            .search-bar-container{
+                padding: 10px 0;
+                
+                width: 100%;
+                input{
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 100%;
+                    border-style: none;
+                    border: solid grey;
+                    height: 100%;
+                    margin-right: 0px;
+                }
+                button{
+                    display: none;
+                    height: 100%;
+                    border-radius: 5px;
+                    padding: 10px;
+                    border-style: none;
+                    background-color: #951515;
+                    color: white;
+                }
+            }
+    
+            .filtre{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 100%;
+    
+                .range-input{
+                    border-radius: 5px;
+                    margin-left: 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border: solid grey;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                select{
+                    margin-bottom: 10px;
+                    border: solid grey;
+                    border-radius: 5px;
+                    margin-left: 0;
+                    padding: 10px;
+                    width: 100%;
+
+                }
+                .btn-container{
+                    margin-left: 0px;
+                    width: 100%;
+                    
+    
+                    button{
+                        width: 100%;
+                        border-radius: 5px;
+                        padding: 10px;
+                        border-style: none;
+                        background-color: #951515;
+                        color: white;
+                    }
+                }
+            }
+        }
+    
+        .cards-container{
+            display: grid;
+            grid-template-columns: 100%;
+            margin-top: 20px;
+            
+    
+            .card-container{
+                border: solid;
+                margin-right: 0;
+                border-color: rgb(206, 206, 206);
+                border-radius: 5px;
+                margin-bottom: 20px;
+    
+                .card-banner{
+                    padding: 5px;
+                    position: relative;
+    
+                    .resto-details{
+                        padding: 5px;
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.467);
+                        border-radius: 5px;
+                        margin: 5px;
+    
+                        .resto-title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: 30px;
+    
+                            .icon{
+                                background-color: #951515;
+                                padding: 0 5px;
+                                border-radius: 5px;
+                                fa-icon{
+                                    color: yellow;
+                                }
+                            }
+    
+                            .title{
+                                font-size: 25px;
+                            }
+                        }
+                        .available{
+                            background-color: green;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                          
+                        }
+                        .unavailable{
+                           
+                            background-color: red;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                        }
+    
+                    }
+    
+                    img{
+                        width: 100%;
+                        height: 150px;
+                        border-radius: 5px;
+                    }
+                }
+    
+                .card-footer{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+    
+                    button{
+                        background-color: #951515;
+                        border-style: none;
+                        padding: 10px;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                    span{
+                        font-size: 15px;
+    
+                        fa-icon{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 912px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    .main-container{
+        // border: solid;
+        padding: 0 35px;
+        
+    
+        .search-container{
+            // margin-top: 100px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+    
+            .search-bar-container{
+                padding: 10px 0;
+                
+                width: 100%;
+                input{
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 100%;
+                    border-style: none;
+                    border: solid grey;
+                    height: 100%;
+                    margin-right: 0px;
+                }
+                button{
+                    display: none;
+                    height: 100%;
+                    border-radius: 5px;
+                    padding: 10px;
+                    border-style: none;
+                    background-color: #951515;
+                    color: white;
+                }
+            }
+    
+            .filtre{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+    
+                .range-input{
+                    border-radius: 5px;
+                    margin-left: 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    border: solid grey;
+                }
+                select{
+                    border: solid grey;
+                    border-radius: 5px;
+                    margin-left: 0;
+                    padding: 10px;
+                    width: 325px;
+
+                }
+                .btn-container{
+                    margin-left: 10px;
+    
+                    button{
+                        border-radius: 5px;
+                        padding: 10px;
+                        border-style: none;
+                        background-color: #951515;
+                        color: white;
+                    }
+                }
+            }
+        }
+    
+        .cards-container{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 20px;
+            
+    
+            .card-container{
+                border: solid;
+                margin-right: 0;
+                border-color: rgb(206, 206, 206);
+                border-radius: 5px;
+                margin-bottom: 20px;
+    
+                .card-banner{
+                    padding: 5px;
+                    position: relative;
+    
+                    .resto-details{
+                        padding: 5px;
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0, 0, 0, 0.467);
+                        border-radius: 5px;
+                        margin: 5px;
+    
+                        .resto-title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: 30px;
+    
+                            .icon{
+                                background-color: #951515;
+                                padding: 0 5px;
+                                border-radius: 5px;
+                                fa-icon{
+                                    color: yellow;
+                                }
+                            }
+    
+                            .title{
+                                font-size: 25px;
+                            }
+                        }
+                        .available{
+                            background-color: green;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                          
+                        }
+                        .unavailable{
+                           
+                            background-color: red;
+                            width: 60px;
+                            text-align: center;
+                            border-radius: 5px;
+                        }
+    
+                    }
+    
+                    img{
+                        width: 100%;
+                        height: 150px;
+                        border-radius: 5px;
+                    }
+                }
+    
+                .card-footer{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+    
+                    button{
+                        background-color: #951515;
+                        border-style: none;
+                        padding: 10px;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                    span{
+                        font-size: 15px;
+    
+                        fa-icon{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

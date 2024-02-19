@@ -48,6 +48,7 @@ header{
 main{
     width: 100%;
     .banner{
+        position: relative;
         height: 40vh;
         width: 100%;
 
@@ -56,10 +57,48 @@ main{
             width: 100%;
             object-fit: cover;
         }
+
+        .couch{
+            padding: 20px;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.57);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .header{
+                display: flex;
+                justify-content: space-between;
+
+                .resto-name{
+                    font-size: 25px;
+                }
+                .resto-star{
+                    background-color: #951515;
+                    padding: 0 10px;
+                    border-radius: 5px;
+
+                    fa-icon{    
+                        color: yellow;
+                    }
+                }
+            }
+            .desc{
+                width: 400px;
+                border: solid;
+                border-radius: 5px;
+                padding: 10px;
+            }
+        }
     }
 
     .body{
-        padding: 50px 150px;
+        padding: 50px 100px;
 
         .header{
             text-align: center;
@@ -82,12 +121,46 @@ main{
                 align-items: center;
                 margin-top: 20px;
                 
+                // img{
+                //     height: 90px;
+                //     border-radius: 5px;
+                //     // margin-right: 15px;
+                // }
 
-                img{
-                    height: 90px;
-                    border-radius: 5px;
-                    // margin-right: 15px;
+                .img-container{
+                    position: relative;
+                    img{
+                        height: 90px;
+                        border-radius: 5px;
+                        // margin-right: 15px;
+                    }
+                    
+                    .couch2{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        border-radius: 5px;
+                        padding: 5px;
+                        background-color: rgba(0, 0, 0, 0.133);
+
+                        .available{
+                            background-color: green;
+                            color: white;
+                            padding: 0 10px;
+                            border-radius: 5px;
+                        }
+
+                        .unavailable{
+                            background-color: red;
+                            color: white;
+                            padding: 0 10px;
+                            border-radius: 5px;
+                        }
+                    }
                 }
+
                 .dish-details{
                     display: flex;
                     flex-direction: column;
@@ -120,7 +193,518 @@ main{
             border: solid gray;
             margin-top: 20px;
             border-radius: 5px;
+
             
+        }
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    main{
+        width: 100%;
+        .banner{
+            height: 40vh;
+            width: 100%;
+            position: relative;
+    
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            .couch{
+                
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.57);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+    
+                .header{
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .resto-name{
+                        font-size: 25px;
+                    }
+                    .resto-star{
+                        background-color: #951515;
+                        padding: 0 10px;
+                        border-radius: 5px;
+    
+                        fa-icon{    
+                            color: yellow;
+                        }
+                    }
+                }
+                .desc{
+                    width: 100%;
+                    border: solid;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+    
+        .body{
+            padding: 50px 20px;
+    
+            .header{
+                text-align: center;
+                
+                h1{
+                    font-weight: bold;
+                    font-size: 35px;
+                    font-family:cursive ;
+                }
+            }
+            
+            .dishes{
+                display: grid;
+                grid-template-columns: 100%;
+                margin-top: 50px;
+    
+                .dish{
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+                    
+    
+                    img{
+                        height: 90px;
+                        border-radius: 5px;
+                        // margin-right: 15px;
+                    }
+                    .dish-details{
+                        display: flex;
+                        flex-direction: column;
+                        margin:0 15px;
+                        width: 100%;
+    
+                        .trait{
+                            border: 1px dashed;
+                            margin: 8px 0;
+                        }
+    
+                        .info1{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+    
+                            .dish-name{
+                                font-size: 20px;
+                            }
+                            .dish-price{
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: #951515 ;
+                            }
+                        }
+                    }
+                }
+            }
+            mat-paginator{
+                border: solid gray;
+                margin-top: 20px;
+                border-radius: 5px;
+                
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    main{
+        width: 100%;
+        .banner{
+            height: 40vh;
+            width: 100%;
+            position: relative;
+    
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            .couch{
+                
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.57);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+    
+                .header{
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .resto-name{
+                        font-size: 25px;
+                    }
+                    .resto-star{
+                        background-color: #951515;
+                        padding: 0 10px;
+                        border-radius: 5px;
+    
+                        fa-icon{    
+                            color: yellow;
+                        }
+                    }
+                }
+                .desc{
+                    width: 100%;
+                    border: solid;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+    
+        .body{
+            padding: 50px 50px;
+    
+            .header{
+                text-align: center;
+                
+                h1{
+                    font-weight: bold;
+                    font-size: 35px;
+                    font-family:cursive ;
+                }
+            }
+            
+            .dishes{
+                display: grid;
+                grid-template-columns: 100%;
+                margin-top: 50px;
+    
+                .dish{
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+                    
+    
+                    img{
+                        height: 90px;
+                        border-radius: 5px;
+                        // margin-right: 15px;
+                    }
+                    .dish-details{
+                        display: flex;
+                        flex-direction: column;
+                        margin:0 15px;
+                        width: 100%;
+    
+                        .trait{
+                            border: 1px dashed;
+                            margin: 8px 0;
+                        }
+    
+                        .info1{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+    
+                            .dish-name{
+                                font-size: 20px;
+                            }
+                            .dish-price{
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: #951515 ;
+                            }
+                        }
+                    }
+                }
+            }
+            mat-paginator{
+                border: solid gray;
+                margin-top: 20px;
+                border-radius: 5px;
+                
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 912px) {
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+    
+        .contact{
+            display: none;
+        }
+        .logo{
+            width: 100px;
+        }
+    
+        .login{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: #951515;
+            color: white;
+            border-color: #951515;
+            
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+        .cgu{
+            display: none;
+            margin-left: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 7px;
+            background-color: white;
+            color: #951515;
+            border-color: #951515;
+    
+            fa-icon{
+                margin-right: 7px;
+            }
+        }
+    }
+    .sub-header{
+        height: 70px;
+    }
+    main{
+        width: 100%;
+        .banner{
+            height: 40vh;
+            width: 100%;
+            position: relative;
+    
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            .couch{
+                
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.57);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+    
+                .header{
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .resto-name{
+                        font-size: 25px;
+                    }
+                    .resto-star{
+                        background-color: #951515;
+                        padding: 0 10px;
+                        border-radius: 5px;
+    
+                        fa-icon{    
+                            color: yellow;
+                        }
+                    }
+                }
+                .desc{
+                    width: 100%;
+                    border: solid;
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+    
+        .body{
+            padding: 50px 50px;
+    
+            .header{
+                text-align: center;
+                
+                h1{
+                    font-weight: bold;
+                    font-size: 35px;
+                    font-family:cursive ;
+                }
+            }
+            
+            .dishes{
+                display: grid;
+                grid-template-columns: 100%;
+                margin-top: 50px;
+    
+                .dish{
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+                    
+    
+                    img{
+                        height: 90px;
+                        border-radius: 5px;
+                        // margin-right: 15px;
+                    }
+                    .dish-details{
+                        display: flex;
+                        flex-direction: column;
+                        margin:0 15px;
+                        width: 100%;
+    
+                        .trait{
+                            border: 1px dashed;
+                            margin: 8px 0;
+                        }
+    
+                        .info1{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+    
+                            .dish-name{
+                                font-size: 20px;
+                            }
+                            .dish-price{
+                                font-size: 20px;
+                                font-weight: bold;
+                                color: #951515 ;
+                            }
+                        }
+                    }
+                }
+            }
+            mat-paginator{
+                border: solid gray;
+                margin-top: 20px;
+                border-radius: 5px;
+                
+            }
         }
     }
 }

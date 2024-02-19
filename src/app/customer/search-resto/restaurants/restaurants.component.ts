@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot , faStar} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-restaurants',
@@ -12,5 +12,6 @@ export class RestaurantsComponent {
   faSearch = faSearch
   faFilter = faFilter
   faLocationDot = faLocationDot
-
+  faStar = faStar
+  
 }

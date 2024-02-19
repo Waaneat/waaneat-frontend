@@ -17,125 +17,187 @@
             <input type="text" placeholder="Rechercher votre plat">
             <button> <fa-icon [icon]="faSearch"></fa-icon> Rechercher</button>
         </div>
-        <div class="filtre">
+        <form class="filtre">
             <select name="" id="">
                 <option value="Colobane">Colobane</option>
                 <option value="Point E">Point E</option>
                 <option value="Grand yoff">Grand yoff</option>
                 <option value="HLM">HLM</option>
             </select>
-            <div class="range-input">
-                <input class="range-input-min" type="range" min="800" max="5000" placeholder="">
-                <input class="range-input-max" type="range" min="5000" max="10000" placeholder="">
-            </div>
             <div class="btn-container">
                 <button> <fa-icon [icon]="faFilter"></fa-icon> Filtrer</button>
             </div>
-        </div>
+        </form>
     </div>
     <div class="cards-container">
+
         <div class="card-container">
             <div class="card-banner">
-                <img src="../../../assets/images/plat1.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="available">
+                        <span>dispo</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="card-container">
             <div class="card-banner">
-                <img src="../../../assets/images/plat2.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-banner">
-                <img src="../../../assets/images/plat3.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="unavailable">
+                        <span>indispo</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="card-container">
             <div class="card-banner">
-                <img src="../../../assets/images/plat4.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-banner">
-                <img src="../../../assets/images/plat5.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="unavailable">
+                        <span>indispo</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="card-container">
             <div class="card-banner">
-                <img src="../../../assets/images/plat6.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-banner">
-                <img src="../../../assets/images/plat7.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="unavailable">
+                        <span>indispo</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="card-container">
             <div class="card-banner">
-                <img src="../../../assets/images/plat8.jpg" alt="">
-            </div>
-            <div class="card-body">
-                <h2>Hamburger</h2>
-            </div>
-            <div class="card-footer">
-                <span class="price"><fa-icon [icon]="faLocationDot"></fa-icon>4km - colobane</span>
-                <button>Visiter</button>
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="unavailable">
+                        <span>indispo</span>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="card-container">
+            <div class="card-banner">
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="available">
+                        <span>dispo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-banner">
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="available">
+                        <span>dispo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card-banner">
+                <img src="../../../assets/images/restaurant-banner.jpg" alt="">
+                <div class="resto-details">
+                    <div class="resto-title">
+                        <span class="title">Chez lamine</span>
+                        <span class="icon">4<fa-icon [icon]="faStar"></fa-icon></span>
+                    </div>
+                    <div class="adress">
+                        <span><fa-icon [icon]="faLocationDot"></fa-icon> Colobane</span>
+                    </div>
+                    <div class="distance">
+                        <span><fa-icon [icon]="faLocationArrow"></fa-icon> 4km</span>
+                    </div>
+                    <div class="available">
+                        <span>dispo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
