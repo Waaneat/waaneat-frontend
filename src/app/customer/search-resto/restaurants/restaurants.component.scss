@@ -11,6 +11,13 @@ header{
     background-color: white;
     z-index: 5;
 
+    .menu{
+        display: none;
+        color: #951515;
+        font-size: 30px;
+        transform: translateY(7px);
+    }
+
     .logo{
         width: 100px;
     }
@@ -41,7 +48,100 @@ header{
             margin-right: 7px;
         }
     }
+    .favorite-dish{
+        background-color: white;
+        padding: 7px;
+        border-radius: 5px;
+        color: #951515;
+        font-size: 16px;
+        border-color: #951515;
+    }
+    .favorite-resto{
+        margin-left: 10px;
+        background-color: white;
+        padding: 7px;
+        border-radius: 5px;
+        color: #951515;
+        font-size: 16px;
+        border-color: #951515;
+    }
 }
+
+.menu-open{
+    
+    display: none;
+    position: fixed;
+    margin-top: 65px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    height: 325px;
+    width: 100%;
+    background-color: white;
+    z-index: 5;
+    // transition: 2s ease;
+    // animation: bg 1s;
+    
+    
+
+    a{
+        text-decoration: none;
+
+        div{
+            background-color: white;
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+    
+            fa-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.menu-close{
+    z-index: 5;
+    color: #951515;
+    position: fixed;
+    margin-top: 65px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    height: 325px;
+    width: 100%;
+    background-color: white;
+    // transition: 2s ease;
+    // animation: bg 1s;
+    
+    
+
+    a{
+        text-decoration: none;
+
+        div{
+            background-color: white;
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+    
+            fa-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
 .sub-header{
     height: 70px;
 }
@@ -49,7 +149,7 @@ main{
     width: 100%;
     .banner{
         position: relative;
-        height: 40vh;
+        height: 50vh;
         width: 100%;
 
         img{
@@ -59,7 +159,7 @@ main{
         }
 
         .couch{
-            padding: 20px;
+            padding: 30px;
             color: white;
             position: absolute;
             top: 0;
@@ -88,6 +188,9 @@ main{
                     }
                 }
             }
+            .details-inside-resto{
+                transform: translateY(-10px);
+            }
             .desc{
                 width: 400px;
                 border: solid;
@@ -98,7 +201,7 @@ main{
     }
 
     .body{
-        padding: 50px 100px;
+        padding: 10px 100px;
 
         .header{
             text-align: center;
@@ -112,8 +215,9 @@ main{
         
         .dishes{
             display: grid;
-            grid-template-columns: 33% 33% 34%;
+            grid-template-columns: 1fr 1fr 1fr;
             margin-top: 50px;
+            gap: 10px;
 
             .dish{
                 height: 100px;
@@ -164,7 +268,7 @@ main{
                 .dish-details{
                     display: flex;
                     flex-direction: column;
-                    margin:0 15px;
+                    margin-left:15px;
                     width: 100%;
 
                     .trait{
@@ -189,14 +293,47 @@ main{
                 }
             }
         }
-        mat-paginator{
-            border: solid gray;
-            margin-top: 20px;
-            border-radius: 5px;
+    }
+}
+footer{
+    height: 30px;
+}
+.page{
+    margin: 30px 100px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(244, 244, 244);
 
+    li{
+        margin: 0.25rem;
+        padding: 0.75rem 1rem;
+        color: grey;
+        
+    }
+
+    a{
+        text-decoration: none;
+
+        li{
+            background-color: white;
+            border-radius: 5px;
             
         }
+
+        &:hover li{
+            border: solid 1px #951515;
+            color: #951515;
+        }
     }
+    
+    a.active li{
+        background-color: #951515;
+        color: white;
+    }
+    
 }
 
 @media only screen and (max-width: 300px) {
@@ -205,12 +342,18 @@ main{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 30px;
+        padding: 0 15px;
         position: fixed;
         width: 100%;
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
         .contact{
             display: none;
         }
@@ -246,6 +389,99 @@ main{
                 margin-right: 7px;
             }
         }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+    }
+    .menu-open{
+    
+        display: none;
+        position: fixed;
+        margin-top: 65px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: black;
+        height: 325px;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+        // transition: 2s ease;
+        // animation: bg 1s;
+        
+        
+    
+        a{
+            text-decoration: none;
+    
+            div{
+                background-color: white;
+                color: #951515;
+                border-bottom: solid rgb(240, 240, 240);
+                padding: 20px 30px;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+        
+                fa-icon{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    
+    .menu-close{
+        z-index: 5;
+        color: #951515;
+        position: fixed;
+        margin-top: 65px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: black;
+        height: 325px;
+        width: 100%;
+        background-color: white;
+        // transition: 2s ease;
+        // animation: bg 1s;
+        
+        
+    
+        a{
+            text-decoration: none;
+    
+            div{
+                background-color: white;
+                color: #951515;
+                border-bottom: solid rgb(240, 240, 240);
+                padding: 20px 30px;
+                font-size: 18px;
+                text-align: center;
+                cursor: pointer;
+        
+                fa-icon{
+                    margin-right: 10px;
+                }
+            }
+        }
     }
     .sub-header{
         height: 70px;
@@ -253,7 +489,7 @@ main{
     main{
         width: 100%;
         .banner{
-            height: 40vh;
+            height: 50vh;
             width: 100%;
             position: relative;
     
@@ -263,7 +499,7 @@ main{
                 object-fit: cover;
             }
             .couch{
-                
+                padding: 15px;
                 color: white;
                 position: absolute;
                 top: 0;
@@ -334,7 +570,7 @@ main{
                     .dish-details{
                         display: flex;
                         flex-direction: column;
-                        margin:0 15px;
+                        margin-left:15px;
                         width: 100%;
     
                         .trait{
@@ -366,6 +602,43 @@ main{
                 
             }
         }
+    }
+    .page{
+        margin: 0 20px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgb(244, 244, 244);
+    
+        li{
+            margin: 0.25rem;
+            padding: 0.75rem 1rem;
+            color: grey;
+            
+        }
+    
+        a{
+            text-decoration: none;
+    
+            li{
+                background-color: white;
+                border-radius: 5px;
+                
+            }
+    
+            &:hover li{
+                border: solid 1px #951515;
+                color: #951515;
+            }
+        }
+        
+        a.active li{
+            background-color: #951515;
+            color: white;
+        }
+        
     }
 }
 
@@ -381,6 +654,12 @@ main{
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
         .contact{
             display: none;
         }
@@ -416,6 +695,25 @@ main{
                 margin-right: 7px;
             }
         }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
     }
     .sub-header{
         height: 70px;
@@ -423,7 +721,7 @@ main{
     main{
         width: 100%;
         .banner{
-            height: 40vh;
+            height: 50vh;
             width: 100%;
             position: relative;
     
@@ -472,7 +770,7 @@ main{
         }
     
         .body{
-            padding: 50px 50px;
+            padding: 50px 30px;
     
             .header{
                 text-align: center;
@@ -504,7 +802,7 @@ main{
                     .dish-details{
                         display: flex;
                         flex-direction: column;
-                        margin:0 15px;
+                        margin-left:15px;
                         width: 100%;
     
                         .trait{
@@ -529,13 +827,44 @@ main{
                     }
                 }
             }
-            mat-paginator{
-                border: solid gray;
-                margin-top: 20px;
+        }
+    }
+    .page{
+        margin: 0 30px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgb(244, 244, 244);
+    
+        li{
+            margin: 0.25rem;
+            padding: 0.75rem 1rem;
+            color: grey;
+            
+        }
+    
+        a{
+            text-decoration: none;
+    
+            li{
+                background-color: white;
                 border-radius: 5px;
                 
             }
+    
+            &:hover li{
+                border: solid 1px #951515;
+                color: #951515;
+            }
         }
+        
+        a.active li{
+            background-color: #951515;
+            color: white;
+        }
+        
     }
 }
 
@@ -551,6 +880,12 @@ main{
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
         .contact{
             display: none;
         }
@@ -585,6 +920,25 @@ main{
             fa-icon{
                 margin-right: 7px;
             }
+        }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
         }
     }
     .sub-header{
@@ -642,7 +996,7 @@ main{
         }
     
         .body{
-            padding: 50px 50px;
+            padding: 50px 30px;
     
             .header{
                 text-align: center;
@@ -674,7 +1028,7 @@ main{
                     .dish-details{
                         display: flex;
                         flex-direction: column;
-                        margin:0 15px;
+                        margin-left:15px;
                         width: 100%;
     
                         .trait{
@@ -699,12 +1053,43 @@ main{
                     }
                 }
             }
-            mat-paginator{
-                border: solid gray;
-                margin-top: 20px;
+        }
+    }
+    .page{
+        margin: 0 30px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgb(244, 244, 244);
+    
+        li{
+            margin: 0.25rem;
+            padding: 0.75rem 1rem;
+            color: grey;
+            
+        }
+    
+        a{
+            text-decoration: none;
+    
+            li{
+                background-color: white;
                 border-radius: 5px;
                 
             }
+    
+            &:hover li{
+                border: solid 1px #951515;
+                color: #951515;
+            }
         }
+        
+        a.active li{
+            background-color: #951515;
+            color: white;
+        }
+        
     }
 }

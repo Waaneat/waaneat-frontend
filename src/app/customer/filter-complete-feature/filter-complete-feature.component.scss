@@ -1,0 +1,93 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+
+    select{
+        border: solid lightgray;
+        border-radius: 5px;
+        padding:10px 5px;
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+    button{
+        background-color: #951515;
+        color: white;
+        padding: 10px 0;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    .range-input{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border: solid lightgray;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+
+        input[type="number"]{
+            width: 50px;
+            height: 30px;
+            font-weight: 700;
+            margin: 0 5px;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+        .range-slider{
+            position: relative;
+            flex-grow: 4;
+            height: 5px;
+            background: #ddd;
+            outline: none;
+            border-radius: 5px;
+
+            .progresse{
+                left: 25%;
+                right: 25%;
+                height: 100%;
+                background: #951515;
+                border-radius: 50px;
+                position: absolute;
+            }
+
+            input[type="range"]{
+                position: absolute;
+                top: -8px;
+                left: -5px;
+                transform: translateY(2px);
+                width: 101%;
+                -webkit-appearance: none;
+                pointer-events: none;
+                background: none;
+                outline: none;
+                
+            }
+            input::-webkit-slider-thumb{
+                pointer-events: auto;
+                -webkit-appearance: none;
+                width: 17px;
+                height: 17px;
+                background: #951515;
+                border-radius: 50px;
+                
+            }
+        }
+    }
+    // .range-input{
+    //     display: flex;
+    //     border: solid lightgray;
+    //     margin-bottom: 15px;
+    //     padding: 15px;
+    //     border-radius: 5px;
+
+    //     input{
+    //         flex-grow: 1;
+    //     }
+    // }
+}

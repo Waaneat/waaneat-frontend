@@ -4,12 +4,52 @@
     </div>
     <div class="contact">Besoin d'aide ? Contactez-nous: 773334433</div>
     <div>
+        <button class="favorite-dish"><fa-icon [icon]="faHeart"></fa-icon> </button>
+        <button class="favorite-resto"><fa-icon [icon]="faShop"></fa-icon> </button>
         <button class="cgu"><fa-icon [icon]="faScaleBalanced"></fa-icon>Politique d'utilisation</button>
         <button class="login"><fa-icon [icon]="faUser"></fa-icon>Connexion</button>
     </div>
+    <fa-icon class="menu" [icon]="isMenuOpen ? faBars : faClose" (click)="toggleMenu()"></fa-icon>
 </header>
 <div class="sub-header">
 
+</div>
+<div class="" [ngClass]="{'menu-open': isMenuOpen, 'menu-close': !isMenuOpen}" (click)="toggleMenu()">
+    
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faLock"></fa-icon> 
+            <span>Connexion</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faScaleBalanced"></fa-icon> 
+            <span>Politique d'utilisation</span>
+        </div>
+    </a>
+    
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes plats favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes restaurants favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faPhone"></fa-icon> 
+            <span>Besoin d'aide ?</span>
+        </div>
+    </a>
 </div>
 <main>
     <div class="banner">
@@ -19,6 +59,17 @@
                 <span class="resto-name">Chez lamine</span>
                 <span class="resto-star">4<fa-icon [icon]="faStar"></fa-icon></span>
             </div>
+            <div class="details-inside-resto">
+                <div>
+                    <fa-icon [icon]="faLocationDot"></fa-icon> 
+                    <span> Colobane - 4km</span>
+                </div>
+                <div>
+                    <fa-icon [icon]="faClock"></fa-icon> 
+                    <span> 9h-18h</span>
+                </div>
+            </div>
+            
             <div class="desc">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. In quis optio distinctio voluptas numquam laboriosam deserunt. Officiis itaque temporibus ducimus et vero numquam accusamus distinctio sequi perferendis, ut tenetur pariatur.
             </div>
@@ -202,11 +253,46 @@
             </div>
             
         </div>
-        <mat-paginator [length]="100"
-              [pageSize]="10"
-              
-              aria-label="Select page">
-        </mat-paginator>
     </div>
     
 </main>
+<section>
+    <ul class="page">
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleRight"></fa-icon>
+            </li>
+        </a>
+        <a href="#page" class="active">
+            <li>
+                1
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                2
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                3
+            </li>
+        </a>
+        <span >
+            <li>
+                ...
+            </li>
+        </span>
+        <a href="#page">
+            <li>
+                21
+            </li>
+        </a>
+    </ul>
+</section>
+<footer></footer>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faScaleBalanced , faUser , faLocation , faLocationDot , faMagnifyingGlassLocation , faPhone , faUtensils , faStar} from '@fortawesome/free-solid-svg-icons'
+import {faScaleBalanced , faUser , faLocation , faLocationDot , faMagnifyingGlassLocation , faPhone , faUtensils , faStar , faBars , faLock , faHeart , faClose , faShop} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-index-customer',
@@ -15,4 +15,15 @@ export class IndexCustomerComponent {
   faPhone = faPhone
   faUtensils = faUtensils
   faStar = faStar
+  faBars = faBars
+  faLock = faLock
+  faHeart = faHeart
+  faClose = faClose
+  faShop = faShop
+  isMenuOpen = true;
+  
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

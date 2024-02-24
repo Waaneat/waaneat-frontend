@@ -11,6 +11,9 @@ header{
     background-color: white;
     z-index: 5;
 
+    .menu{
+        display: none;
+    }
     .logo{
         width: 100px;
     }
@@ -41,6 +44,133 @@ header{
             margin-right: 7px;
         }
     }
+    .favorite-dish{
+        background-color: white;
+        padding: 7px;
+        border-radius: 5px;
+        color: #951515;
+        font-size: 16px;
+        border-color: #951515;
+    }
+    .favorite-resto{
+        margin-left: 10px;
+        background-color: white;
+        padding: 7px;
+        border-radius: 5px;
+        color: #951515;
+        font-size: 16px;
+        border-color: #951515;
+    }
+}
+.check:checked~ .menu-container{
+    display: block;
+}
+
+.menu-open{
+    
+    display: none;
+    position: fixed;
+    margin-top: 65px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    height: 325px;
+    width: 100%;
+    background-color: white;
+    z-index: 5;
+    // transition: 2s ease;
+    // animation: bg 1s;
+    
+    
+
+    a{
+        text-decoration: none;
+
+        div{
+            background-color: white;
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+    
+            fa-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.menu-close{
+    z-index: 5;
+    color: #951515;
+    position: fixed;
+    margin-top: 65px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    height: 325px;
+    width: 100%;
+    background-color: white;
+    // transition: 2s ease;
+    // animation: bg 1s;
+    
+    
+
+    a{
+        text-decoration: none;
+
+        div{
+            background-color: white;
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+    
+            fa-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.menu-container{
+    display: none;
+    position: absolute;
+    margin-top: 65px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: black;
+    height: 325px;
+    width: 100%;
+    background-color: white;
+    // transition: 2s ease;
+    // animation: bg 1s;
+    
+    
+
+    div{
+        
+        border-bottom: solid rgb(240, 240, 240);
+        padding: 20px 30px;
+        font-size: 22px;
+        text-align: center;
+        cursor: pointer;
+
+        fa-icon{
+            margin-right: 10px;
+        }
+    }
+
 }
 .section1{
     height: 90vh;
@@ -95,6 +225,7 @@ header{
             }
 
             select{
+                padding: 0 10px;
                 flex-grow: 7;
                 border-radius: 5px;
                 height: 100%;
@@ -356,12 +487,19 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 30px;
+        padding: 0 15px;
         position: fixed;
         width: 100%;
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
+
         .logo{
             width: 100px;
         }
@@ -395,6 +533,93 @@ footer{
     
             fa-icon{
                 margin-right: 7px;
+            }
+        }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+    }
+
+    .menu-open{
+        position: fixed;
+        display: none;
+        // position: absolute;
+        margin-top: 65px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: black;
+        height: 325px;
+        width: 100%;
+        background-color: white;
+        z-index: 5;
+        // transition: 2s ease;
+        // animation: bg 1s;
+        
+        
+    
+        div{
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            background-color: white;
+    
+            fa-icon{
+                margin-right: 10px;
+            }
+        }
+    }
+    
+    .menu-close{
+        position: fixed;
+        z-index: 5;
+        color: #951515;
+        // position: absolute;
+        margin-top: 65px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: black;
+        height: 325px;
+        width: 100%;
+        background-color: white;
+        // transition: 2s ease;
+        // animation: bg 1s;
+        
+        
+    
+        div{
+            background-color: white;
+            color: #951515;
+            border-bottom: solid rgb(240, 240, 240);
+            padding: 20px 30px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+    
+            fa-icon{
+                margin-right: 10px;
             }
         }
     }
@@ -735,12 +960,23 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 30px;
+        padding: 0 20px;
         position: fixed;
         width: 100%;
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
+
+        .menu-close{
+            display: none;
+        }
+
         .logo{
             width: 100px;
         }
@@ -776,6 +1012,31 @@ footer{
                 margin-right: 7px;
             }
         }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+    }
+    .check:checked~  header .menu-close{
+        display: block;
+    }
+    .check:checked~ header .menu-open{
+        display: none;
     }
 
     .section1{
@@ -1113,12 +1374,18 @@ footer{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 30px;
+        padding: 0 20px;
         position: fixed;
         width: 100%;
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
         .logo{
             width: 100px;
         }
@@ -1153,6 +1420,25 @@ footer{
             fa-icon{
                 margin-right: 7px;
             }
+        }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
         }
     }
 
@@ -1496,7 +1782,6 @@ footer{
         }
     
         .login{
-            display: none;
             margin-left: 10px;
             border-radius: 5px;
             font-size: 16px;
@@ -1509,11 +1794,8 @@ footer{
                 margin-right: 7px;
             }
         }
-        .contact{
-            display: none;
-        }
         .cgu{
-            display: none;
+            
             margin-left: 10px;
             border-radius: 5px;
             font-size: 16px;
@@ -1525,6 +1807,25 @@ footer{
             fa-icon{
                 margin-right: 7px;
             }
+        }
+        .favorite-dish{
+            display: inline-block;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: inline-block;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
         }
     }
 
@@ -1863,6 +2164,12 @@ footer{
         background-color: white;
         z-index: 5;
     
+        .menu{
+            display: inline-block;
+            color: #951515;
+            font-size: 30px;
+            transform: translateY(7px);
+        }
         .logo{
             width: 100px;
         }
@@ -1897,6 +2204,25 @@ footer{
             fa-icon{
                 margin-right: 7px;
             }
+        }
+        .favorite-dish{
+            display: none;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            display: none;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
         }
     }
 
@@ -2236,11 +2562,11 @@ footer{
         z-index: 5;
     
         .logo{
+            flex-grow: 2;
             width: 100px;
         }
     
         .login{
-            display: none;
             margin-left: 10px;
             border-radius: 5px;
             font-size: 16px;
@@ -2253,11 +2579,7 @@ footer{
                 margin-right: 7px;
             }
         }
-        .contact{
-            display: none;
-        }
         .cgu{
-            display: none;
             margin-left: 10px;
             border-radius: 5px;
             font-size: 16px;
@@ -2265,10 +2587,32 @@ footer{
             background-color: white;
             color: #951515;
             border-color: #951515;
+            
     
             fa-icon{
                 margin-right: 7px;
             }
+        }
+        .favorite-dish{
+            flex-grow: 3;
+            display: inline-block;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
+        }
+        .favorite-resto{
+            flex-grow: 3;
+            display: inline-block;
+            margin-left: 10px;
+            background-color: white;
+            padding: 7px;
+            border-radius: 5px;
+            color: #951515;
+            font-size: 16px;
+            border-color: #951515;
         }
     }
 

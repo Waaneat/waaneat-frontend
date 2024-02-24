@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot , faStar} from '@fortawesome/free-solid-svg-icons'
+import {faScaleBalanced , faUser , faSearch , faFilter , faLocationDot , faStar , faHeart , faShop , faLock , faPhone , faBars , faClose , faClock , faAngleLeft , faAngleRight} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-restaurants',
@@ -13,5 +13,19 @@ export class RestaurantsComponent {
   faFilter = faFilter
   faLocationDot = faLocationDot
   faStar = faStar
+  faHeart = faHeart
+  faShop = faShop
+  faLock = faLock
+  faPhone = faPhone
+  faBars = faBars
+  faClose = faClose
+  faClock = faClock
+  faAngleLeft = faAngleLeft
+  faAngleRight = faAngleRight
+  isMenuOpen = true;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   
 }

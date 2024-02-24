@@ -2,12 +2,52 @@
     <div>
         <img class="logo" src="../../../assets/images/waaneat-logo.png" alt="logo">
     </div>
-    <div class="contact">Besoin d'aide ? Contactez-nous: 773334433</div>
+    <div class="contact">Contactez-nous: 773334433</div>
     <div>
+        <button class="favorite-dish"><fa-icon [icon]="faHeart"></fa-icon> </button>
+        <button class="favorite-resto"><fa-icon [icon]="faShop"></fa-icon> </button>
         <button class="cgu"><fa-icon [icon]="faScaleBalanced"></fa-icon>Politique d'utilisation</button>
         <button class="login"><fa-icon [icon]="faUser"></fa-icon>Connexion</button>
     </div>
+    <fa-icon class="menu" [icon]="isMenuOpen ? faBars : faClose" (click)="toggleMenu()"></fa-icon>
 </header>
+<div class="" [ngClass]="{'menu-open': isMenuOpen, 'menu-close': !isMenuOpen}" (click)="toggleMenu()">
+    
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faLock"></fa-icon> 
+            <span>Connexion</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faScaleBalanced"></fa-icon> 
+            <span>Politique d'utilisation</span>
+        </div>
+    </a>
+    
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes plats favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes restaurants favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faPhone"></fa-icon> 
+            <span>Besoin d'aide ?</span>
+        </div>
+    </a>
+</div>
 <main class="section1">
     <div class="left-banner">
         <div class="text">

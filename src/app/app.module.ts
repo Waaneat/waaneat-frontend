@@ -32,6 +32,15 @@ import { RestaurantsComponent } from './customer/search-resto/restaurants/restau
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
 import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+import {MatListModule} from '@angular/material/list';
+import { FilterFeatureComponent } from './customer/filter-feature/filter-feature.component';
+import { FilterCompleteFeatureComponent } from './customer/filter-complete-feature/filter-complete-feature.component';
+
 
 
 @NgModule({
@@ -54,7 +63,9 @@ import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
     SearchRestoComponent,
     RestaurantsComponent,
     DishFromRestoComponent,
-    IndexAdminComponent
+    IndexAdminComponent,
+    FilterFeatureComponent,
+    FilterCompleteFeatureComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +81,9 @@ import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
     MatInputModule,
     FontAwesomeModule,
     MatSlideToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatBottomSheetModule,
+    MatListModule
   ],
   providers: [
     provideClientHydration()
