@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {faHome , faGear , faRightFromBracket , faUser , faEdit , faEnvelope , faPhone , faClock , faAdd , faBars , faClose , faShop , faTrash , faCaretDown , faSearch , faStore , faUsers , faUserGear} from '@fortawesome/free-solid-svg-icons'
-import { AddDishComponent } from '../../seller/add-dish/add-dish.component';
-import { EditDishComponent } from '../../seller/edit-dish/edit-dish.component';
-import { EditInfoComponent } from '../../seller/edit-info/edit-info.component';
-import { EditDescComponent } from '../../seller/edit-desc/edit-desc.component';
-import { EditBackgroundComponent } from '../../seller/edit-background/edit-background.component';
+import { EditDishComponent } from '../../seller/index-seller/edit-dish/edit-dish.component';
+import { EditBackgroundComponent } from '../../seller/index-seller/edit-background/edit-background.component';
+import { AddDishComponent } from '../../seller/index-seller/add-dish/add-dish.component';
 
 
 @Component({
@@ -64,19 +62,19 @@ export class IndexAdminComponent {
     })
   }
 
-  openDialogEditInfo(){
-    this.dialog.open(EditInfoComponent,{
-      width:"600px",
-      height: "500px"
-    })
-  }
+  // openDialogEditInfo(){
+  //   this.dialog.open(EditInfoComponent,{
+  //     width:"600px",
+  //     height: "500px"
+  //   })
+  // }
 
-  openDialogEditDesc(){
-    this.dialog.open(EditDescComponent,{
-      width:"600px",
-      height: "300px"
-    })
-  }
+  // openDialogEditDesc(){
+  //   this.dialog.open(EditDescComponent,{
+  //     width:"600px",
+  //     height: "300px"
+  //   })
+  // }
 
   openDialogEditBackground(){
     this.dialog.open(EditBackgroundComponent,{

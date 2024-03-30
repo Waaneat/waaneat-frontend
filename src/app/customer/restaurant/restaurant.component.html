@@ -1,0 +1,158 @@
+<header>
+    <div>
+        <a href="http://localhost:4200/"><img class="logo" src="../../../assets/images/waaneat-logo.png" alt="logo"></a>
+    </div>
+    <div class="contact">Besoin d'aide ? Contactez-nous: 773334433</div>
+    <div>
+        <!-- <button class="favorite-dish"><fa-icon [icon]="faHeart"></fa-icon> </button>
+        <button class="favorite-resto"><fa-icon [icon]="faShop"></fa-icon> </button> -->
+        <button class="cgu"><fa-icon [icon]="faScaleBalanced"></fa-icon>Politique d'utilisation</button>
+        <button routerLink="../../connexion" class="login"><fa-icon [icon]="faUser"></fa-icon>Connexion</button>
+    </div>
+    <fa-icon class="menu" [icon]="isMenuOpen ? faBars : faClose" (click)="toggleMenu()"></fa-icon>
+</header>
+<div class="sub-header">
+
+</div>
+<div class="" [ngClass]="{'menu-open': isMenuOpen, 'menu-close': !isMenuOpen}" (click)="toggleMenu()">
+    
+    <a href="http://localhost:4200/connexion">
+        <div>
+            <fa-icon [icon]="faLock"></fa-icon> 
+            <span>Connexion</span>
+        </div>
+    </a>
+
+    <a href="#">
+        <div>
+            <fa-icon [icon]="faScaleBalanced"></fa-icon> 
+            <span>Politique d'utilisation</span>
+        </div>
+    </a>
+    
+    <!-- <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes plats favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes restaurants favoris</span>
+        </div>
+    </a> -->
+
+    <a href="#">
+        <div>
+            <fa-icon [icon]="faPhone"></fa-icon> 
+            <span>Besoin d'aide ?</span>
+        </div>
+    </a>
+</div>
+<main>
+    <div class="banner">
+        <img src="../../../../assets/images/restaurant2-banner.jpg" alt="">
+        <div class="couch">
+            <div class="header">
+                <span class="resto-name">{{restoData.restoName}}</span>
+                <span class="resto-star"><fa-icon [icon]="faStar"></fa-icon></span>
+            </div>
+            <div class="details-inside-resto">
+                <div>
+                    <fa-icon [icon]="faLocationDot"></fa-icon> 
+                    <span> {{restoData.adress}} - 4km</span>
+                </div>
+                <div>
+                    <fa-icon [icon]="faClock"></fa-icon> 
+                    <span> {{restoData.hourStart}}-{{restoData.hourEnd}}</span>
+                </div>
+                <div [class.status-open]="restoData.isAvailable" [class.status-closed]="!restoData.isAvailable">
+                    {{ restoData.isAvailable ? 'Ouvert' : 'Fermé' }}
+                </div>
+            </div>
+            
+            <div class="desc">
+                {{restoData.restoDesc}}
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="header">
+            <h1>Nos plats</h1>
+            <p>{{restoData.restoName}} vous souhaite la bienvenue dans leur restaurant</p>
+        </div>
+        <div class="dishes" *ngIf="dishes && dishes.length > 0">
+            
+            <div *ngFor="let dish of dishes" class="dish">
+                <a [href]="'http://localhost:4200/plat/' + dish.id">
+                    <div class="img-container">
+                        <img src="../../../../assets/images/plat2.jpg" alt="">
+                        <div class="couch2">
+                            <span [class.available]="dish.isAvailable" [class.unavailable]="!dish.isAvailable">
+                                {{ dish.isAvailable ? 'disponible' : 'indisponible' }}
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                <div class="dish-details">
+                    <div class="info1">
+                        <span class="dish-name">{{ dish.dishName.length > 15 ? dish.dishName.slice(0, 13) + '...' : dish.dishName }}</span>
+                        <span class="dish-price">{{ dish.dishPrice }}f</span>
+                    </div>
+                    <span class="trait"></span>
+                    <div class="info2">
+                        <span class="dish-desc">{{ dish.dishDesc.length > 33 ? dish.dishDesc.slice(0, 33) + '...' : dish.dishDesc }}</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div style="text-align: center;" *ngIf="!(dishes && dishes.length > 0)">
+            Aucun plat disponible
+        </div>
+    </div>
+    
+</main>
+<section>
+    <ul class="page">
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleRight"></fa-icon>
+            </li>
+        </a>
+        <a href="#page" class="active">
+            <li>
+                1
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                2
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                3
+            </li>
+        </a>
+        <span >
+            <li>
+                ...
+            </li>
+        </span>
+        <a href="#page">
+            <li>
+                21
+            </li>
+        </a>
+    </ul>
+</section>
+<footer></footer>

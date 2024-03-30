@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { fileTypeValidator } from '../../../../utils/fileTypeValidator';
 import { Seller } from '../../../../shared/Seller';
+import { Restaurant } from '../../../../shared/Restaurant';
+import {StorageService} from '../../../services/storage.service'
 
 
 @Component({
@@ -16,6 +18,7 @@ import { Seller } from '../../../../shared/Seller';
 
 
 export class RegisterSellerComponent {
+  
   acceptedExtensions = "jpg , JPG , jpeg, JPEG , png , PNG ";
   fileName = ''
   isLinear = false;
@@ -24,7 +27,9 @@ export class RegisterSellerComponent {
     private authService:AuthenticationService,
     private router:Router,
     private _formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<RegisterSellerComponent>
+    private dialogRef: MatDialogRef<RegisterSellerComponent>,
+    private storageService: StorageService
+    
   ){
     
   }
@@ -68,28 +73,57 @@ export class RegisterSellerComponent {
 
   register(){
     let seller = new Seller(
-      this.contactForm.controls.senderUsername.value ?? '', // Valeur par défaut si c'est null
+      "",
+      this.contactForm.controls.senderEntreprise.value ?? '',
+      this.contactForm.controls.senderIdentityCard.value ?? '',
+      this.contactForm.controls.senderCategory.value ?? '',
+      this.contactForm.controls.senderHourStart.value ?? '',
+      this.contactForm.controls.senderHourEnd.value ?? ''
+    );
+
+    let user = new User(
+      "",
+      this.contactForm.controls.senderUsername.value ?? '',
       this.contactForm.controls.senderEmail.value ?? '',
       this.contactForm.controls.senderTel.value ?? '',
       this.contactForm.controls.senderPassword.value ?? '',
       this.contactForm.controls.senderAdress.value ?? '',
-      this.contactForm.controls.senderEntreprise.value ?? '',
-      this.fileName,
-      this.contactForm.controls.senderCategory.value ?? '',
-      this.contactForm.controls.senderHourStart.value ?? '',
-      this.contactForm.controls.senderHourEnd.value ?? '',
-      
+      "seller"
     );
-    console.log(this.contactForm.controls.senderIdentityCard.value)
+
+    let restaurant = new Restaurant(
+      "",
+      this.contactForm.controls.senderEntreprise.value ?? '',
+      "pas de description",
+      false,
+      "neant.jpg",
+      this.contactForm.controls.senderHourStart.value ?? '',
+      this.contactForm.controls.senderHourEnd.value ?? ''
+    )
+
+    let formData:any = {
+      username: user.username,
+      email: user.email,
+      tel: user.tel,
+      password: user.password,
+      adress: user.adress,
+      companyName: seller.companyName,
+      identityCard: this.fileName,
+      category: seller.category,
+      hourStart: restaurant.hourStart,
+      hourEnd: restaurant.hourEnd
+    }
+
     if(this.contactForm.invalid){
       alert('Formulaire invalide')
     }else{
-      console.log(seller)
-      this.authService.registerSeller(seller)
-      
-      .subscribe(()=>{
+      this.authService.registerSeller(formData).subscribe((res)=>{
+
+        this.storageService.loginUser(res.callback.token)
+        
         this.dialogRef.close();
-        this.router.navigate(['/'])
+        
+        this.router.navigate(['/vendeur/dashboard'])
       },(err:any)=>{
         this.errors = err.error.callback
         console.log(this.errors)

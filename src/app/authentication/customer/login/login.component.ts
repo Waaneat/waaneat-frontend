@@ -32,15 +32,13 @@ export class LoginComponent{
   }
 
   login() {
-    const credentials = {
+    const credentials:any = {
       identifier: this.contactForm.controls.senderIdentifier.value ?? '',
       password: this.contactForm.controls.senderPassword.value ?? ''
     };
   
-    console.log(credentials)
     this.authService.loginCustomer(credentials).subscribe(
       () => {
-        // Connexion réussie, effectuez les actions nécessaires (redirection, etc.)
         this.router.navigate(['/']);
       },
       (err: any) => {

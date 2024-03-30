@@ -21,17 +21,11 @@ import { LoginSellerComponent } from './authentication/seller/login-seller/login
 import { LoginAdminComponent } from './authentication/admin/login-admin/login-admin.component';
 import { IndexSellerComponent } from './seller/index-seller/index-seller.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AddDishComponent } from './seller/add-dish/add-dish.component';
-import { EditDishComponent } from './seller/edit-dish/edit-dish.component';
-import { EditInfoComponent } from './seller/edit-info/edit-info.component';
-import { EditDescComponent } from './seller/edit-desc/edit-desc.component';
-import { EditBackgroundComponent } from './seller/edit-background/edit-background.component';
-import { IndexCustomerComponent } from './customer/index-customer/index-customer.component';
-import { SearchDishesComponent } from './customer/search-dishes/search-dishes.component';
-import { SearchRestoComponent } from './customer/search-resto/search-resto.component';
-import { RestaurantsComponent } from './customer/search-resto/restaurants/restaurants.component';
+import { EditDishComponent } from './seller/index-seller/edit-dish/edit-dish.component';
+import { EditBackgroundComponent } from './seller/index-seller/edit-background/edit-background.component';
+import { IndexCustomerComponent } from './customer/index-customer.component';
+
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { DishFromRestoComponent } from './customer/search-resto/restaurants/dish-from-resto/dish-from-resto.component';
 import { IndexAdminComponent } from './admin/index-admin/index-admin.component';
 import {
   MatBottomSheet,
@@ -39,9 +33,20 @@ import {
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import {MatListModule} from '@angular/material/list';
-import { FilterFeatureComponent } from './customer/filter-feature/filter-feature.component';
-import { FilterCompleteFeatureComponent } from './customer/filter-complete-feature/filter-complete-feature.component';
-
+import { DeleteDishComponent } from './seller/index-seller/delete-dish/delete-dish.component';
+import { AddDishDialogComponent } from './seller/dialogs/add-dish-dialog/add-dish-dialog.component';
+import { AddDishComponent } from './seller/index-seller/add-dish/add-dish.component';
+import { UpdateAvailabilityComponent } from './seller/index-seller/update-availability/update-availability.component';
+import { UpdateDishAvailabilityComponent } from './seller/index-seller/update-dish-availability/update-dish-availability.component';
+import { UpdateSellerInformationComponent } from './seller/index-seller/update-seller-information/update-seller-information.component';
+import { UpdateRestoDescComponent } from './seller/index-seller/update-resto-desc/update-resto-desc.component';
+import { FilterRestoComponent } from './customer/restaurants/filter-resto/filter-resto.component';
+import { RestaurantComponent } from './customer/restaurant/restaurant.component';
+import { DishComponent } from './customer/dish/dish.component';
+import { DishesComponent } from './customer/dishes/dishes.component';
+import { FilterDishComponent } from './customer/dishes/filter-dish/filter-dish.component';
+import { RestaurantsComponent } from './customer/restaurants/restaurants.component';
+import { NotFoundComponent } from './customer/not-found/not-found.component';
 
 
 @NgModule({
@@ -54,19 +59,24 @@ import { FilterCompleteFeatureComponent } from './customer/filter-complete-featu
     LoginSellerComponent,
     LoginAdminComponent,
     IndexSellerComponent,
-    AddDishComponent,
     EditDishComponent,
-    EditInfoComponent,
-    EditDescComponent,
     EditBackgroundComponent,
     IndexCustomerComponent,
-    SearchDishesComponent,
-    SearchRestoComponent,
     RestaurantsComponent,
-    DishFromRestoComponent,
     IndexAdminComponent,
-    FilterFeatureComponent,
-    FilterCompleteFeatureComponent
+    DeleteDishComponent,
+    AddDishDialogComponent,
+    AddDishComponent,
+    UpdateAvailabilityComponent,
+    UpdateDishAvailabilityComponent,
+    UpdateSellerInformationComponent,
+    UpdateRestoDescComponent,
+    FilterRestoComponent,
+    RestaurantComponent,
+    DishComponent,
+    DishesComponent,
+    FilterDishComponent,
+    NotFoundComponent  
   ],
   imports: [
     BrowserModule,
@@ -89,6 +99,7 @@ import { FilterCompleteFeatureComponent } from './customer/filter-complete-featu
   providers: [
     provideClientHydration(),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
+
   ],
   bootstrap: [AppComponent]
 })

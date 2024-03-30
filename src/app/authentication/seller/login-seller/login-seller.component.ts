@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../authentication.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegisterSellerComponent } from '../register-seller/register-seller.component';
+import { StorageService } from '../../../services/storage.service';
 
 @Component({
   selector: 'app-login-seller',
@@ -15,7 +16,8 @@ export class LoginSellerComponent {
   constructor( 
     private dialog:MatDialog,
     private router:Router,
-    private authService:AuthenticationService
+    private authService:AuthenticationService,
+    private storageService:StorageService
   ){}
 
 
@@ -32,16 +34,19 @@ export class LoginSellerComponent {
   }
 
   login() {
-    const credentials = {
+    const credentials:any = {
       identifier: this.contactForm.controls.senderIdentifier.value ?? '',
       password: this.contactForm.controls.senderPassword.value ?? ''
     };
   
     console.log(credentials)
     this.authService.loginSeller(credentials).subscribe(
-      () => {
-        // Connexion réussie, effectuez les actions nécessaires (redirection, etc.)
-        this.router.navigate(['/']);
+      (res) => {
+        this.storageService.loginUser(res.callback.token)
+        
+        this.dialog.closeAll();
+        
+        this.router.navigate(['/vendeur/dashboard']);
       },
       (err: any) => {
         this.errors = err.error.callback

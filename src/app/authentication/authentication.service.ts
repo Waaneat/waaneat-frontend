@@ -3,18 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { User } from '../../shared/User';
 import { Seller } from '../../shared/Seller';
+import { StorageService } from '../services/storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private storageService:StorageService
+  ) { }
 
   private getStandardOptions(): any{
     return{
       headers: new HttpHeaders({
         'Content-Type':'application/json',
+        credentials: 'include'
       })
     }
   }
@@ -29,25 +34,32 @@ export class AuthenticationService {
   }
 
   //Customers' authentication
-  registerCustomer(customer: User):any{
+  registerCustomer(formData: any): Observable<any>{
     let options = this.getStandardOptions()
-    options.headers = options.headers.set("Authorization","value-need-for-authorization")
-    return this.http.post("http://localhost:5000/customers/register",customer,options)
+    // options.headers = options.headers.set("Authorization","value-need-for-authorization")
+    return this.http.post("http://localhost:5000/api/customers/register",formData,options)
   }
-  loginCustomer(credentials:{ identifier: string; password: string; }): Observable<any> {
+  loginCustomer(credentials: any): Observable<any> {
     const options = this.getStandardOptions();
-    return this.http.post('http://localhost:5000/auth/customer', credentials, options)
+    return this.http.post('http://localhost:5000/api/auth/customer', credentials, options)
   }
 
   //Sellers' authentication
-  registerSeller(seller: Seller):any{
+  registerSeller(formData: any): Observable<any>{
     let options = this.getStandardOptions()
-    options.headers = options.headers.set("Authorization","value-need-for-authorization")
-    return this.http.post("http://localhost:5000/sellers/register",seller,options)
+    // options.headers = options.headers.set("Authorization","value-need-for-authorization")
+    return this.http.post("http://localhost:5000/api/seller/register",formData,options)
   }
-  loginSeller(credentials:{ identifier: string; password: string; }): Observable<any> {
+
+  logoutSeller(){
+    let options = this.getStandardOptions()
+    this.storageService.logoutUser()
+    this.http.get("http://localhost:5000/api/auth/seller/logout",options)
+  }
+
+  loginSeller(credentials: any): Observable<any> {
     const options = this.getStandardOptions();
-    return this.http.post('http://localhost:5000/auth/seller', credentials, options)
+    return this.http.post('http://localhost:5000/api/auth/seller', credentials, options)
   }
 
 }

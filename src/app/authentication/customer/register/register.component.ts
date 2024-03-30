@@ -29,19 +29,23 @@ export class RegisterComponent {
   });
 
   register(){
-    let customer = new Customer(
-      this.contactForm.controls.senderUsername.value ?? '', // Valeur par défaut si c'est null
-      this.contactForm.controls.senderEmail.value ?? '',
-      this.contactForm.controls.senderTel.value ?? '',
-      this.contactForm.controls.senderPassword.value ?? '',
-      this.contactForm.controls.senderAdress.value ?? ''
+    new Customer(
+      ""
     );
-    console.log(customer)
+
+    let formData:any = {
+      username : this.contactForm.controls.senderUsername.value ?? '', // Valeur par défaut si c'est null
+      email : this.contactForm.controls.senderEmail.value ?? '',
+      tel : this.contactForm.controls.senderTel.value ?? '',
+      password : this.contactForm.controls.senderPassword.value ?? '',
+      adress : this.contactForm.controls.senderAdress.value ?? '',
+      userType : "customer"
+    }
+    
     if(this.contactForm.invalid){
       alert('error')
     }else{
-      console.log(customer)
-      this.authService.registerCustomer(customer)
+      this.authService.registerCustomer(formData)
       
       .subscribe(()=>{
         this.dialogRef.close();

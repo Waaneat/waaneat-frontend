@@ -1,0 +1,70 @@
+<div class="contain-form">
+    <form [formGroup]="contactForm">
+        <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step>
+                <ng-template matStepLabel>Ajouter un plat</ng-template>
+                <main>
+                    <div>
+                        <input type="text" placeholder="nom du plat" formControlName="senderDishName">
+                        <div *ngIf="contactForm.get('senderDishName')?.invalid && (contactForm.get('senderDishName')?.dirty || contactForm.get('senderDishName')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishName')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div> 
+                        <input type="number" placeholder="prix du plat" formControlName="senderDishPrice">
+                        <div *ngIf="contactForm.get('senderDishPrice')?.invalid && (contactForm.get('senderDishPrice')?.dirty || contactForm.get('senderDishPrice')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishPrice')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <textarea placeholder="description du plat" formControlName="senderDishDesc"></textarea>
+                        <div *ngIf="contactForm.get('senderDishDesc')?.invalid && (contactForm.get('senderDishDesc')?.dirty || contactForm.get('senderDishDesc')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishDesc')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                        </div>
+                    </div>
+
+                    <div (click)="fileUpload.click()" class="upload-container">
+                        <div>
+                            <fa-icon [icon]="faUpload"></fa-icon>
+                            <span>Chargez la photo du plat</span>
+                        </div>
+                    </div>
+                    <div class="CI-container">
+                        <input formControlName="senderDishImg" style="display: none;" type="file" class="file-input" accept=".jpg, .jpeg, .png" 
+                             #fileUpload (change)="uploadFile($event)">
+    
+                        
+
+                        <div *ngIf="contactForm.get('senderDishImg')?.invalid && (contactForm.get('senderDishImg')?.dirty || contactForm.get('senderDishImg')?.touched)">
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishImg')?.hasError('required')">
+                                Veuillez remplir le champs
+                            </small>
+                            <small class="text-danger" *ngIf="contactForm.get('senderDishImg')?.hasError('inValidExt')">
+                                Seuls PNG , JPG , JPEG sont valides
+                            </small>
+                            
+                        </div>
+                    </div>
+                </main>
+                <!-- <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div> -->
+            </mat-step>
+        </mat-stepper>
+        <header>
+            <button mat-icon-button matDialogClose> <mat-icon>close</mat-icon></button>
+        </header>
+        
+        <footer>
+            <button [disabled]="contactForm.invalid" (click)="addDish()" type="submit">Ajouter</button>
+        </footer>
+    </form>
+</div>

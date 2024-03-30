@@ -1,9 +1,11 @@
 export class User{
     constructor(
-        protected username:string,
-        protected email: string,
-        protected tel:string,
-        protected password:string,
-        protected adress:string,
+        public id:string,
+        public username:string,
+        public email: string,
+        public tel:string,
+        public password:string,
+        public adress:string,
+        public userType:string
     ){}
 }
