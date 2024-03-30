@@ -1,13 +1,7 @@
 import { User } from "./User";
 
-export class Customer extends User{
+export class Customer{
     constructor(
-        username:string,
-        email: string,
-        tel:string,
-        password:string,
-        adress:string,
-    ){
-        super(username,email,tel,password,adress)
-    }
+        public id:string,
+    ){}
 }

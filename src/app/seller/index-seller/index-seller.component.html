@@ -9,10 +9,10 @@
                 <span>Dashboard</span>
             </div>
               
-            <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+            <!-- <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
                 <span><fa-icon [icon]="faGear"></fa-icon></span>
                 <span>Parametres</span>
-            </div>
+            </div> -->
               
             <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
                 <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
@@ -33,12 +33,12 @@
                         <span>Dashboard</span>
                     </div>
                       
-                    <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
+                    <!-- <div [ngClass]="{'active': activeTab === 'parametres'}" (click)="setActiveTab('parametres')">
                         <span><fa-icon [icon]="faGear"></fa-icon></span>
                         <span>Parametres</span>
-                    </div>
+                    </div> -->
                       
-                    <div [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
+                    <div routerLink="/vendeur/connexion" [ngClass]="{'active': activeTab === 'deconnexion'}" (click)="setActiveTab('deconnexion')">
                         <span><fa-icon [icon]="faRightFromBracket"></fa-icon></span>
                         <span>Deconnexion</span>
                     </div>
@@ -48,7 +48,7 @@
         <div class="banner">
             <img src="../../../assets/images/restaurant2-banner.jpg" alt="">
             <div class="div-banner">
-                <h2>Chez Lamine saff roff</h2>
+                <h2>{{restoData.restoName}}</h2>
                 <mat-dialog-actions>
                 <div mat-raised-button (click)="$event.preventDefault();openDialogEditBackground()">
                     
@@ -64,19 +64,14 @@
             <main class="dash-container">
                 <div class="top-dc sub-container">
                     <span>Dashboard</span>
-                    <label class="switch-btn">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
+                    <app-update-availability [restoDatas]="restoData"></app-update-availability>
                 </div>
                 <div class="middle-dc sub-container">
                     <div class="left-mdc">
                         <header class="header1">
                             <span style="font-size: 25px;" class="title">Plats</span>
                             <span>
-                                <mat-dialog-actions>
-                                    <button mat-raised-button (click)="$event.preventDefault();openDialogAddDish()"><fa-icon [icon]="faAdd"></fa-icon>Ajouter</button>
-                                </mat-dialog-actions>
+                                <app-add-dish></app-add-dish>
                             </span>
                         </header>
                         <div>
@@ -87,60 +82,22 @@
                                 <div>action</div>
                             </header>
                             <main class="dishes-container">
-                                <div class="dish-tr">
-                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
-                                    <div class="dish-name">Thiebou dieune</div>
-                                    <div>1000f</div>
-                                    <div class="action">
-                                        <mat-dialog-actions>
-                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
-                                        </mat-dialog-actions>
-                                        <label class="switch-btn">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
+                                
+                                <div *ngIf="dishes.length == 0 || dishes[0].id == null" class="dish-tr">
+                                    <span>Aucun plat disponible</span>
                                 </div>
-                                <div class="dish-tr">
-                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
-                                    <div class="dish-name">Thiebou dieune</div>
-                                    <div>1000f</div>
+                                
+                                <div *ngFor="let dish of dishes" class="dish-tr">
+                                    <div class="dish-img"><span><img [src]="dish.dishUrl" alt=""></span></div>
+                                    <div class="dish-name">{{dish.dishName}}</div>
+                                    <div>{{dish.dishPrice}}</div>
                                     <div class="action">
-                                        <mat-dialog-actions>
-                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
+                                        <app-update-dish-availability style="height: 25px;" [dishData]="dish"></app-update-dish-availability>
+                                        <mat-dialog-actions style="margin-left: 5px;">
+                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish(dish.id)" [icon]="faEdit"></fa-icon>
                                         </mat-dialog-actions>
-                                        <label class="switch-btn">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="dish-tr">
-                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
-                                    <div class="dish-name">Thiebou dieune</div>
-                                    <div>1000f</div>
-                                    <div class="action">
-                                        <mat-dialog-actions>
-                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
-                                        </mat-dialog-actions>
-                                        <label class="switch-btn">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="dish-tr">
-                                    <div class="dish-img"><span><img src="../../../assets/images/restaurant-banner.jpg" alt=""></span></div>
-                                    <div class="dish-name">Thiebou dieune</div>
-                                    <div>1000f</div>
-                                    <div class="action">
-                                        <mat-dialog-actions>
-                                            <fa-icon mat-raised-button (click)="$event.preventDefault();openDialogEditDish()" [icon]="faEdit"></fa-icon>
-                                        </mat-dialog-actions>
-                                        <label class="switch-btn">
-                                            <input type="checkbox">
-                                            <span class="slider"></span>
-                                        </label>
+                                        
+                                        <app-delete-dish [dishId]="dish.id" ></app-delete-dish>
                                     </div>
                                 </div>
                                 
@@ -160,23 +117,23 @@
                             </header>
                             <div>
                                 <span><fa-icon [icon]="faUser"></fa-icon></span>
-                                <span>dabso</span>
+                                <span>{{restoData.username}}</span>
                             </div>
                             <div>
                                 <span><fa-icon [icon]="faShop"></fa-icon></span>
-                                <span>Chez lamine</span>
+                                <span>{{restoData.restoName}}</span>
                             </div>
                             <div>
                                 <span><fa-icon [icon]="faEnvelope"></fa-icon></span>
-                                <span>laminedabogmail.com</span>
+                                <span>{{restoData.email}}</span>
                             </div>
                             <div>
                                 <span><fa-icon [icon]="faPhone"></fa-icon></span>
-                                <span>773338833</span>
+                                <span>{{restoData.tel}}</span>
                             </div>
                             <div>
                                 <span><fa-icon [icon]="faClock"></fa-icon></span>
-                                <span>10h00 - 18h00</span>
+                                <span>{{restoData.hourStart}} - {{restoData.hourEnd}}</span>
                             </div>
                         </div>
                         <div class="desc">
@@ -189,7 +146,7 @@
                                 </span>
                             </header>
                             <div>
-                                <span>Pas de description</span>
+                                <span>{{restoData.restoDesc}}</span>
                             </div>
                             
                         </div>

@@ -1,0 +1,25 @@
+<header>
+    <div class="shop">
+        <span><a style="text-decoration: none;color: #951515;" [href]="'http://localhost:4200/restaurant/' + dishData.idResto">Voir le restaurant</a></span>
+    </div>
+    
+    <div>
+        <fa-icon [icon]="faCartShopping"></fa-icon> 
+    </div>
+</header>
+<main>
+    <div class="dish-img">
+        <img src="../../../../../assets/images/plat1.jpg" alt="">
+    </div>
+    <div class="dish-details">
+        <div class="top-details">
+            <h1>{{dishData.dishName}}</h1>
+            <p>{{dishData.dishDesc}}</p>
+            <h2>{{dishData.dishPrice}}F</h2>
+            <button>Commander le plat</button>
+        </div>
+        <div class="order">
+            
+        </div>
+    </div>
+</main>

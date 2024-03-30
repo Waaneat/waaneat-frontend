@@ -1,0 +1,139 @@
+<header>
+    <div>
+        <a href="http://localhost:4200/"><img class="logo" src="../../../assets/images/waaneat-logo.png" alt="logo"></a>
+    </div>
+    <div class="contact">Besoin d'aide ? Contactez-nous: 773334433</div>
+    <div>
+        <!-- <button class="favorite-dish"><fa-icon [icon]="faHeart"></fa-icon> </button>
+        <button class="favorite-resto"><fa-icon [icon]="faShop"></fa-icon> </button> -->
+        <button class="cgu"><fa-icon [icon]="faScaleBalanced"></fa-icon>Politique d'utilisation</button>
+        <button routerLink="../connexion" class="login"><fa-icon [icon]="faUser"></fa-icon>Connexion</button>
+    </div>
+    <fa-icon class="menu" [icon]="isMenuOpen ? faBars : faClose" (click)="toggleMenu()"></fa-icon>
+</header>
+<div class="sub-header">
+    
+</div>
+<div class="" [ngClass]="{'menu-open': isMenuOpen, 'menu-close': !isMenuOpen}" (click)="toggleMenu()">
+    
+    <a href="http://localhost:4200/connexion">
+        <div>
+            <fa-icon [icon]="faLock"></fa-icon> 
+            <span>Connexion</span>
+        </div>
+    </a>
+
+    <a href="#">
+        <div>
+            <fa-icon [icon]="faScaleBalanced"></fa-icon> 
+            <span>Politique d'utilisation</span>
+        </div>
+    </a>
+    
+    <!-- <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes plats favoris</span>
+        </div>
+    </a>
+
+    <a href="http://localhost:4200/vendeur/dashboard">
+        <div>
+            <fa-icon [icon]="faHeart"></fa-icon> 
+            <span>Mes restaurants favoris</span>
+        </div>
+    </a> -->
+
+    <a href="#">
+        <div>
+            <fa-icon [icon]="faPhone"></fa-icon> 
+            <span>Besoin d'aide ?</span>
+        </div>
+    </a>
+</div>
+<main class="main-container">
+    <form class="action-sup" action="">
+        <button mat-raised-button (click)="openBottomSheet()"><fa-icon [icon]="faFilter"></fa-icon> </button>
+        
+    </form>
+    <div class="search-container">
+        <div class="search-bar-container">
+            <input type="text" placeholder="Rechercher votre plat">
+            <button> <fa-icon [icon]="faSearch"></fa-icon> <span>Rechercher</span></button>
+        </div>
+        <div class="filtre">
+            <select name="" id="">
+                <option value="Colobane">Colobane</option>
+                <option value="Point E">Point E</option>
+                <option value="Grand yoff">Grand yoff</option>
+                <option value="HLM">HLM</option>
+            </select>
+            <div class="range-input">
+                <input class="range-input-min" type="range" min="800" max="5000" placeholder="">
+                <input class="range-input-max" type="range" min="5000" max="10000" placeholder="">
+            </div>
+            <div class="btn-container">
+                <button> <fa-icon [icon]="faFilter"></fa-icon> Filtrer</button>
+            </div>
+        </div>
+    </div>
+    <div class="cards-container">
+
+        <div *ngFor="let dish of dishes" class="card-container">
+            <a style="text-decoration: none;color: black;" [href]="'http://localhost:4200/plat/' + dish.id">
+                <div class="card-banner">
+                    <img src="../../../assets/images/plat1.jpg" alt="">
+                </div>
+                <div class="card-body">
+                    <h2>{{ dish.dishName.length > 13 ? (dish.dishName.slice(0, 13).trim() + '...') : dish.dishName }}</h2>
+                    <p>{{ dish.dishDesc.length > 35 ? (dish.dishDesc.slice(0, 35).trim() + '...') : dish.dishDesc }}</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">{{dish.dishPrice}}f</span>
+                    <button>Commander</button>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</main>
+<section>
+    <ul class="page">
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleLeft"></fa-icon>
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                <fa-icon [icon]="faAngleRight"></fa-icon>
+            </li>
+        </a>
+        <a href="#page" class="active">
+            <li>
+                1
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                2
+            </li>
+        </a>
+        <a href="#page">
+            <li>
+                3
+            </li>
+        </a>
+        <span >
+            <li>
+                ...
+            </li>
+        </span>
+        <a href="#page">
+            <li>
+                21
+            </li>
+        </a>
+    </ul>
+</section>
+<footer></footer>

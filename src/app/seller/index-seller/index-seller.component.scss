@@ -259,7 +259,7 @@ main{
                             display: flex;
                             flex-direction: column;
                             overflow-y: auto;
-                            max-height: 320px;
+                            max-height: 310px;
 
                             .dish-tr{
                                 padding: 15px 20px;
@@ -384,7 +384,7 @@ main{
     display: inline-block;
     width: 45px;
     height: 25px;
-    margin: 0 10px;
+    margin-right: 10px;
 
     .slider{
         position: absolute;
